@@ -87,3 +87,20 @@ Received Import Request.
 Start importing Assets/UI仮画像.png using Guid(00b9928de39aa9746adc8872fa2c7239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b143e34f3136b09a901d27a31d838bbb') in 0.077721 seconds 
   Import took 0.080535 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 442.286820 seconds.
+  path: Assets/Wepon
+  artifactKey: Guid(0af5c6ddf919581498ab7a381419444c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Wepon using Guid(0af5c6ddf919581498ab7a381419444c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8de1302926f78ec6b6e60867b3b50bae') in 0.006103 seconds 
+  Import took 0.009730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.034864 seconds.
+  path: Assets/Wepon/Wepon select.png
+  artifactKey: Guid(4018fb61757bae14cbe1daa2117a4406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Wepon/Wepon select.png using Guid(4018fb61757bae14cbe1daa2117a4406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e23a224708f6dd92dd63272ad1810b86') in 0.013762 seconds 
+  Import took 0.016828 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
