@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour
         float horizontalKey = Input.GetAxis("Horizontal") * speed;
         float verticalKey = Input.GetAxis("Vertical") * speed;
 
+        //ˆÚ“®ˆ—
         rb.velocity = new Vector2(horizontalKey, verticalKey);
+
+        //ƒ}ƒEƒX‚Ì•û‚ğŒü‚­ˆ—
+        var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
+        var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
+        transform.localRotation = rotation;
     }
 }
