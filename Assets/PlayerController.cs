@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("敵のプレファブ")] public GameObject mirrorPrefab;
+    [Header("鏡のプレファブ")] public GameObject mirrorPrefab;
+    [Header("凸面鏡のプレファブ")] public GameObject convexMirrorPrefab;
+    [Header("凹面鏡のプレファブ")] public GameObject concaveMirrorPrefab;
     [Header("移動速度")] public float speed;
 
     private Rigidbody2D rb = null;
@@ -35,6 +37,18 @@ public class PlayerController : MonoBehaviour
         {
             GameObject item = transform.Find("Weapon").gameObject;
             GameObject weapon = Instantiate(mirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
+            weapon.transform.parent = item.transform;
+        }
+        else if (collision.tag == "ItemConvexMirror")
+        {
+            GameObject item = transform.Find("Weapon").gameObject;
+            GameObject weapon = Instantiate(convexMirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
+            weapon.transform.parent = item.transform;
+        }
+        else if (collision.tag == "ItemConcaveMirror")
+        {
+            GameObject item = transform.Find("Weapon").gameObject;
+            GameObject weapon = Instantiate(concaveMirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
             weapon.transform.parent = item.transform;
         }
     }
