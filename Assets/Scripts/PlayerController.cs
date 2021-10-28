@@ -19,5 +19,6 @@ public class PlayerController : MonoBehaviour
         float verticalKey = Input.GetAxis("Vertical") * speed;
 
         rb.velocity = new Vector2(horizontalKey, verticalKey);
+        
     }
 }

@@ -6,23 +6,27 @@ public class Mirror : MonoBehaviour
 {
     //ミラーの挙動を制御するスクリプトです。
     //プレイヤーの周りに生成された鏡をマウスの動きに併せて動かします
-    //プレイヤーにも同じものをつけて制御します
+    //鏡はプレイヤーの子オブジェクトにしているので同じ挙動をします
 
-    
+    Plane plane = new Plane();
+    float distance = 0;
+
+    void Start()
+    {
+        // 2Dは高さが変わらないので、パラメータ更新せず使いまわしても問題ないはず
+        plane.SetNormalAndPosition(Vector3.back, transform.localPosition);
+    }
 
     void Update()
     {
-        var screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        var direction = Input.mousePosition - screenPos;
-        var angle = GetAim(Vector3.zero, direction);
-        transform.SetLocalEulerAnglesY(-angle + 90f);
+        // マウスの位置を元にPlaneへの距離を取得
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (plane.Raycast(ray, out distance))
+        {
+            //Planeとの交点を求めて、キャラクターを向ける
+            var lookPoint = ray.GetPoint(distance); ;
+            transform.LookAt(transform.localPosition + Vector3.forward, lookPoint - transform.localPosition);
+        }
     }
-
-   public float GetAim(Vector2 from,Vector2 to)
-    {
-        float dx = to.x - from.x;
-        float dy = to.y - from.y;
-        float rad = Mathf.Atan2(dy, dx);
-        return rad * Mathf.Rad2Deg;
-    }
+   
 }
