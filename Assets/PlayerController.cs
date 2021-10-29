@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("鏡のプレファブ")] public GameObject mirrorPrefab;
-    [Header("凸面鏡のプレファブ")] public GameObject convexMirrorPrefab;
-    [Header("凹面鏡のプレファブ")] public GameObject concaveMirrorPrefab;
+    [Header("鏡のプレファブ")] public GameObject mirror;
+    [Header("凸面鏡のプレファブ")] public GameObject convexMirror;
+    [Header("凹面鏡のプレファブ")] public GameObject concaveMirror;
     [Header("移動速度")] public float speed;
 
     private Rigidbody2D rb = null;
@@ -31,27 +31,26 @@ public class PlayerController : MonoBehaviour
     }
 
     //安定するまでコメントアウトしておきます
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //鏡を取った時、その鏡を装備する
         if (collision.tag == "ItemMirror")
         {
-            GameObject item = transform.Find("Weapon").gameObject;
-            GameObject weapon = Instantiate(mirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
-            weapon.transform.parent = item.transform;
+            mirror.SetActive(true);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(false);
         }
         else if (collision.tag == "ItemConvexMirror")
         {
-            GameObject item = transform.Find("Weapon").gameObject;
-            GameObject weapon = Instantiate(convexMirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
-            weapon.transform.parent = item.transform;
+            mirror.SetActive(false);
+            convexMirror.SetActive(true);
+            concaveMirror.SetActive(false);
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
-            GameObject item = transform.Find("Weapon").gameObject;
-            GameObject weapon = Instantiate(concaveMirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
-            weapon.transform.parent = item.transform;
+            mirror.SetActive(false);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(true);
         }
     }
 }
