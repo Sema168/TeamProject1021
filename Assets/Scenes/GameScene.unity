@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 420994074}
   - component: {fileID: 420994073}
   - component: {fileID: 420994077}
-  - component: {fileID: 420994078}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -259,23 +258,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc973de57e65aa4ca1e3c1db44bede0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorPrefab: {fileID: 0}
-  convexMirrorPrefab: {fileID: 0}
-  concaveMirrorPrefab: {fileID: 0}
+  mirrorPrefab: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
+  convexMirrorPrefab: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
+  concaveMirrorPrefab: {fileID: 8174878728677988490, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
   speed: 5
---- !u!114 &420994078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420994072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d6a5b4d49d00ca44ba7b611fb01376a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
