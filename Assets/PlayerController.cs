@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float horizontalKey = Input.GetAxis("Horizontal") * speed;
-        float verticalKey = Input.GetAxis("Vertical") * speed;
+        float verticalKey = Input.GetAxis("Vertical")* speed;
 
         //移動処理
         rb.velocity = new Vector2(horizontalKey, verticalKey);
@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
     }
+
+    //安定するまでコメントアウトしておきます
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
