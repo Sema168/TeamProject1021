@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject enemy;  //①動かしたいオブジェクトをインスペクターから入れる。
-    public GameObject tama;
+    //public GameObject tama;
     public float shotSpeed;
     public int speed = 5;  //オブジェクトが自動で動くスピード調整
     Vector3 movePosition;  //②オブジェクトの目的地を保存
@@ -34,14 +34,14 @@ public class Enemy : MonoBehaviour
         Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 5);
         return randomPosi;
     }
-    public void dasu()
-    {
+    //public void dasu()
+    //{
 
 
-        zb = transform.position;
-        zb.y += 1.0f; // プレイヤーのy座標 + 1の位置に弾を生成する
+    //    zb = transform.position;
+    //    zb.y += 1.0f; // プレイヤーのy座標 + 1の位置に弾を生成する
 
-        Instantiate(tama, zb, Quaternion.identity);
+    //    Instantiate(tama, zb, Quaternion.identity);
         
-    }
+    //}
 }
