@@ -42,6 +42,6 @@ public class Enemy : MonoBehaviour
     //    zb.y += 1.0f; // プレイヤーのy座標 + 1の位置に弾を生成する
 
     //    Instantiate(tama, zb, Quaternion.identity);
-        
+
     //}
 }
