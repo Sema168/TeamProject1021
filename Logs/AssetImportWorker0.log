@@ -1347,3 +1347,4 @@ Received Import Request.
 Start importing Assets/Wepon/Wepon select 2.png using Guid(c5852efc258eb7c429b9dcd7d6f869f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95408a616aeb015680285161d205c7de') in 0.034846 seconds 
   Import took 0.038271 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
