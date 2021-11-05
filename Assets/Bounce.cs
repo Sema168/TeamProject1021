@@ -23,9 +23,16 @@ public class Bounce : MonoBehaviour
         this.lastVelocity = this.rb.velocity;
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
+    public void OnCollisionEnter2D(Collision2D coll)
     {
-        Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, coll.contacts[0].normal);
-        this.rb.velocity = refrectVec;
+        if (coll.gameObject.tag =="Mirror")
+        {
+            Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, coll.contacts[0].normal);
+            this.rb.velocity = refrectVec;
+        }
+        else
+        {
+            Debug.Log("ãæà»äOÇ…êGÇÍÇΩÅI");
+        }
     }
 }
