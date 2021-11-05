@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ”½Ë‚·‚éˆ—
+/// </summary>
 public class Bounce : MonoBehaviour
 {
     private Vector2 lastVelocity;

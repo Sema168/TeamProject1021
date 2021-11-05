@@ -18,19 +18,21 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        float horizontalKey = Input.GetAxis("Horizontal") * speed;
-        float verticalKey = Input.GetAxis("Vertical")* speed;
-
-        //移動処理
-        rb.velocity = new Vector2(horizontalKey, verticalKey);
-
         //マウスの方を向く処理
         var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
     }
 
-    //安定するまでコメントアウトしておきます
+    void FixedUpdate()
+    {
+        float horizontalKey = Input.GetAxis("Horizontal") * speed;
+        float verticalKey = Input.GetAxis("Vertical") * speed;
+
+        //移動処理
+        rb.velocity = new Vector2(horizontalKey, verticalKey);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //鏡を取った時、その鏡を装備する
