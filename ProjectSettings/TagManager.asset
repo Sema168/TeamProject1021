@@ -9,6 +9,7 @@ TagManager:
   - ItemConcaveMirror
   - player
   - tama
+  - Enemy
   layers:
   - Default
   - TransparentFX

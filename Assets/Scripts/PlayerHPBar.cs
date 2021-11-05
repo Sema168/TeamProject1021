@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class PlayerHPBar : MonoBehaviour
 {
     //最大HPと現在のHP。
-    int maxHp = 155;
-    int currentHp;
+    public float maxHp = 155;
+    float currentHp;
     //Sliderを入れる
     public Slider slider;
 
@@ -16,6 +16,7 @@ public class PlayerHPBar : MonoBehaviour
         slider.value = 1;
         //現在のHPを最大HPと同じに。
         currentHp = maxHp;
+        //currentHp = maxHp;
         Debug.Log("Start currentHp : " + currentHp);
     }
 
@@ -26,8 +27,8 @@ public class PlayerHPBar : MonoBehaviour
         if (collider.gameObject.tag == "Enemy")
         {
             //ダメージは1～100の中でランダムに決める。
-            int damage = Random.Range(1, 100);
-            Debug.Log("damage : " + damage);
+            int damage = 50;//Random.Range(1, 100);
+            //Debug.Log("damage : " + damage);
 
             //現在のHPからダメージを引く
             currentHp = currentHp - damage;
