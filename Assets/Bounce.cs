@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Bounce : MonoBehaviour
 {
+    //public GameObject laserPrefab;
     private Vector2 lastVelocity;
     private Rigidbody2D rb;
 
@@ -23,13 +24,26 @@ public class Bounce : MonoBehaviour
         this.lastVelocity = this.rb.velocity;
     }
 
-    public void OnCollisionEnter2D(Collision2D coll)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (coll.gameObject.tag =="Mirror")
+        if (collision.gameObject.tag == "Mirror")
         {
-            Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, coll.contacts[0].normal);
+            Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
             this.rb.velocity = refrectVec;
         }
+        //else if (collision.gameObject.tag == "ConvexMirror")
+        //{
+        //    GameObject newLaser = Instantiate(laserPrefab, this.transform.position, this.transform.rotation);
+        //    Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
+        //    this.rb.velocity = refrectVec;
+        //    Debug.Log("ì ñ ãæÇ…êGÇÍÇΩÅI");
+        //}
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("ìGÇ…É_ÉÅÅ[ÉWÇó^Ç¶ÇΩÅI");
+            Destroy(gameObject);
+        }
+        //else if (collision.gameObject.tag == "Laser"){}
         else
         {
             Debug.Log("ãæà»äOÇ…êGÇÍÇΩÅI");
