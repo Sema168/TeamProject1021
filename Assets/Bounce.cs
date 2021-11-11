@@ -7,13 +7,14 @@ using UnityEngine;
 /// </summary>
 public class Bounce : MonoBehaviour
 {
-    //public GameObject laserPrefab;
+    [Header("敵の弾")]public GameObject laserPrefab;
+
     private Vector2 lastVelocity;
-    private Rigidbody2D rb;
+    private Rigidbody2D rb = null;
 
     void Start()
     {
-        this.rb = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
 
         //勝手に動かすためのプログラム、後ほど消します
         rb.velocity = new Vector2(0, 4);
@@ -21,21 +22,19 @@ public class Bounce : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.lastVelocity = this.rb.velocity;
+        lastVelocity = rb.velocity;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Mirror")
         {
-            Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
-            this.rb.velocity = refrectVec;
+            Reflect(collision);
         }
         //else if (collision.gameObject.tag == "ConvexMirror")
         //{
         //    GameObject newLaser = Instantiate(laserPrefab, this.transform.position, this.transform.rotation);
-        //    Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
-        //    this.rb.velocity = refrectVec;
+        //    Reflect(collision);
         //    Debug.Log("凸面鏡に触れた！");
         //}
         else if (collision.gameObject.tag == "Enemy")
@@ -43,10 +42,19 @@ public class Bounce : MonoBehaviour
             Debug.Log("敵にダメージを与えた！");
             Destroy(gameObject);
         }
-        //else if (collision.gameObject.tag == "Laser"){}
         else
         {
-            Debug.Log("鏡以外に触れた！");
+            Debug.Log("鏡、敵以外に触れた！");
         }
+    }
+
+    /// <summary>
+    /// 反射する
+    /// </summary>
+    /// <param name="collision"></param>
+    void Reflect(Collision2D collision)
+    {
+        Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
+        this.rb.velocity = refrectVec;
     }
 }
