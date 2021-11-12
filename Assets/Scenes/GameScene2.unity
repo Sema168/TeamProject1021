@@ -784,6 +784,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1623690228}
   tama: {fileID: 7161831261418326209, guid: d4f93cb8387c86349bbe6e07ab4654de, type: 3}
+  enemy: {fileID: 1049465585}
+  speed: 5
 --- !u!58 &1088577364
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -935,7 +937,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 860853656}
   m_FillRect: {fileID: 1828837329}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
@@ -1235,9 +1237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986b11ff173b91346b54e58276529eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorPrefab: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
-  convexMirrorPrefab: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
-  concaveMirrorPrefab: {fileID: 8174878728677988490, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
+  mirror: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
+  convexMirror: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
+  concaveMirror: {fileID: 8174878728677988490, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
   speed: 3
 --- !u!70 &1623690230
 CapsuleCollider2D:

@@ -329,13 +329,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 420994072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc973de57e65aa4ca1e3c1db44bede0, type: 3}
+  m_Script: {fileID: 11500000, guid: 986b11ff173b91346b54e58276529eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirror: {fileID: 899563575}
-  convexMirror: {fileID: 613005081}
-  concaveMirror: {fileID: 930911449}
-  speed: 5
+  mirror: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
+  convexMirror: {fileID: 8174878728677988490, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
+  concaveMirror: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
+  speed: 2.18
 --- !u!1 &459246549
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,13 +595,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemConcaveMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 8174878728677988490, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
---- !u!1 &613005081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4968271980703068960, guid: 57ad6a6dba9682f43a3140712ab685c1, type: 3}
-  m_PrefabInstance: {fileID: 1890665234}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &613005082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4603933778203810250, guid: 57ad6a6dba9682f43a3140712ab685c1, type: 3}
@@ -888,20 +887,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &899563575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8379305213832653332, guid: 1e11d98e0b23b0c4898df1d1db09bdf8, type: 3}
-  m_PrefabInstance: {fileID: 264585961}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &899563576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8379305213832653333, guid: 1e11d98e0b23b0c4898df1d1db09bdf8, type: 3}
   m_PrefabInstance: {fileID: 264585961}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &930911449 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6200793415988725206, guid: a39fa99e3a0abbc4586efb5db4ecc329, type: 3}
-  m_PrefabInstance: {fileID: 769079843}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &930911450 stripped
 Transform:
@@ -1189,6 +1178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemConvexMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
 --- !u!1001 &1434024632
@@ -1198,9 +1191,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3950700289786972842, guid: 020d19085986a95498165c4f33922837, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
       propertyPath: m_Name
       value: ItemMirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3950700289786972847, guid: 020d19085986a95498165c4f33922837, type: 3}
       propertyPath: m_RootOrder
