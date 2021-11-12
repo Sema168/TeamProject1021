@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// ”½Ë‚·‚éˆ—
-/// </summary>
-public class Bounce : MonoBehaviour
+public class Laser : MonoBehaviour
 {
-    [Header("“G‚Ì’e")]public GameObject laserPrefab;
+    [Header("“G‚Ì’e")] public GameObject laserPrefab;
 
     private Vector2 lastVelocity;
-    private Rigidbody2D rb = null;
+    private Rigidbody2D rb;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         //Ÿè‚É“®‚©‚·‚½‚ß‚ÌƒvƒƒOƒ‰ƒ€AŒã‚Ù‚ÇÁ‚µ‚Ü‚·
         rb.velocity = new Vector2(0, 4);
@@ -31,22 +28,30 @@ public class Bounce : MonoBehaviour
         {
             Reflect(collision);
         }
-        //else if (collision.gameObject.tag == "ConvexMirror")
-        //{
-        //    GameObject newLaser = Instantiate(laserPrefab, this.transform.position, this.transform.rotation);
-        //    Reflect(collision);
-        //    Debug.Log("“Ê–Ê‹¾‚ÉG‚ê‚½I");
-        //}
         else if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("“G‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚½I");
-            Destroy(gameObject);
         }
         else
         {
             Debug.Log("‹¾A“GˆÈŠO‚ÉG‚ê‚½I");
         }
     }
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+        {
+            GetComponent<CircleCollider2D>().isTrigger = true;
+        }
+    }
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+        {
+            GetComponent<CircleCollider2D>().isTrigger = false;
+        }
+    }
+
 
     /// <summary>
     /// ”½Ë‚·‚é

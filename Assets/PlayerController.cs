@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("凹面鏡のプレファブ")] public GameObject concaveMirror;
     [Header("移動速度")] public float speed;
 
-    private Rigidbody2D rb = null;
+    private Rigidbody2D rb;
 
     void Start()
     {
@@ -54,6 +54,5 @@ public class PlayerController : MonoBehaviour
             convexMirror.SetActive(false);
             concaveMirror.SetActive(true);
         }
-
     }
 }

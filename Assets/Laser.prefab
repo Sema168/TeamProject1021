@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2208831388216788471}
   - component: {fileID: 2208831388216788468}
   - component: {fileID: 2208831388216788469}
-  - component: {fileID: 2208831388216788361}
+  - component: {fileID: -3211699378287981187}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Laser
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2208831388216788361
+--- !u!114 &-3211699378287981187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2208831388216788466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4598f851fe1b064a884d14e22356600, type: 3}
+  m_Script: {fileID: 11500000, guid: 84c853a394cd02c4d9933f3ea20b5ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 2208831388216788466}
