@@ -7,11 +7,9 @@ TagManager:
   - ItemMirror
   - ItemConvexMirror
   - ItemConcaveMirror
-  - Mirror
-  - Laser
-  - ConvexMirror
+  - player
+  - tama
   - Enemy
-  - ConcavaMirror
   layers:
   - Default
   - TransparentFX

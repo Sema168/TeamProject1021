@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: 8fc973de57e65aa4ca1e3c1db44bede0
+guid: 986b11ff173b91346b54e58276529eb3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mirrorPrefab: {fileID: 3950700289786972846, guid: 020d19085986a95498165c4f33922837, type: 3}
+  - convexMirrorPrefab: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
+  - concaveMirrorPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
