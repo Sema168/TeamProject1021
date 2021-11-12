@@ -15,6 +15,8 @@ public class hani : MonoBehaviour
     Vector3 movePosition;//②オブジェクトの目的地を保存
     void Start()
     {
+
+
         movePosition = moveRandomPosition();
     }
 
@@ -37,9 +39,9 @@ public class hani : MonoBehaviour
             {
                 currentTime = 0;
                 //敵の座標を変数posに保存
-                var pos = this.gameObject.transform.position;
+                var pos = this.gameObject.transform.position - (this.gameObject.transform.position * 0.15f);
                 //弾のプレハブを作成
-                var t = Instantiate(tama) as GameObject;
+                var t = Instantiate(tama);
                 //弾のプレハブの位置を敵の位置にする
                 t.transform.position = pos;
                 //敵からプレイヤーに向かうベクトルをつくる
@@ -53,7 +55,7 @@ public class hani : MonoBehaviour
                 //gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed);
 
             }
-            Destroy(GameObject.FindWithTag("tama"), 5.0f);
+            //Destroy(GameObject.FindWithTag("tama"), 5.0f);
 
         }
 
@@ -65,14 +67,30 @@ public class hani : MonoBehaviour
     void idou()
     {
 
-        if (movePosition == enemy.transform.position)  //②playerオブジェクトが目的地に到達すると、
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, movePosition);
+        //Debug.DrawLine(transform.position, movePosition,Color.red);
+        if (hit.collider.gameObject.name == "Square" || hit.collider.gameObject.name == "Square.1" || hit.collider.gameObject.name == "Square.2" || hit.collider.gameObject.name == "Square.3")
         {
-            movePosition = moveRandomPosition();  //②目的地を再設定
+            movePosition = sin();
+        }
+        else
+        {
+            if (movePosition == enemy.transform.position)  //②playerオブジェクトが目的地に到達すると、
+            {
+                movePosition = moveRandomPosition();  //②目的地を再設定
+            }
+
         }
         this.enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, movePosition, speed * Time.deltaTime);  //①②playerオブジェクトが, 目的地に移動, 移動速度
 
     }
     private Vector3 moveRandomPosition()  // 目的地を生成、xとyのポジションをランダムに値を取得 
+    {
+        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 5);
+        return randomPosi;
+    }
+    private Vector3 sin()  // 目的地を生成、xとyのポジションをランダムに値を取得 
     {
         Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 5);
         return randomPosi;
