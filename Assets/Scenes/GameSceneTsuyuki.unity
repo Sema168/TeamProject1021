@@ -1814,10 +1814,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 2208831388216788466, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}
     - target: {fileID: 2208831388216788466, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}
       propertyPath: m_Name
       value: Laser
@@ -1865,6 +1861,10 @@ PrefabInstance:
     - target: {fileID: 2208831388216788470, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504765717592611491, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}
+      propertyPath: m_Name
+      value: LaserCollision
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}

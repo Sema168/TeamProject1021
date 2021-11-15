@@ -19,7 +19,7 @@ public class Laser : MonoBehaviour
 
     void FixedUpdate()
     {
-        lastVelocity = rb.velocity;
+        lastVelocity = this.rb.velocity;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -30,28 +30,19 @@ public class Laser : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
+            //敵にダメージを与える処理
             Debug.Log("敵にダメージを与えた！");
+        }
+        else if (collision.gameObject.tag == "Laser")
+        {
+            //Destroy対策
         }
         else
         {
+            //Destroy(gameObject);
             Debug.Log("鏡、敵以外に触れた！");
         }
     }
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Laser")
-        {
-            GetComponent<CircleCollider2D>().isTrigger = true;
-        }
-    }
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Laser")
-        {
-            GetComponent<CircleCollider2D>().isTrigger = false;
-        }
-    }
-
 
     /// <summary>
     /// 反射する

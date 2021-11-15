@@ -17,10 +17,12 @@ public class ConvexMirror : MonoBehaviour
     {
         if (collision.gameObject.tag == "Laser")
         {
+            //òAë±Ç≈î≠ê∂ÇµÇ»Ç¢ÇÊÇ§Ç…Ç∑ÇÈ(0.2ïbÇ≤Ç∆)
             if (timeleft <= 0.0)
             {
                 timeleft = 0.2f;
 
+                //îΩéÀÇ∑ÇÈíeÇ™ëùÇ¶ÇÈ
                 GameObject newLaser = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser.GetComponent<CircleCollider2D>().isTrigger = true;
                 newLaser.GetComponent<Rigidbody2D>().velocity = -GetComponent<Rigidbody2D>().velocity;
