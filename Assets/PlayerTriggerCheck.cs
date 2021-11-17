@@ -6,10 +6,11 @@ public class PlayerTriggerCheck : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Laser")
+        if (collision.tag == "Laser") 
         {
             Debug.Log("ダメージを受けた！");
             Destroy(collision.gameObject);
         }
     }
+
 }

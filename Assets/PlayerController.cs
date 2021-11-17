@@ -41,18 +41,21 @@ public class PlayerController : MonoBehaviour
             mirror.SetActive(true);
             convexMirror.SetActive(false);
             concaveMirror.SetActive(false);
+            Destroy(collision.gameObject);
         }
         else if (collision.tag == "ItemConvexMirror")
         {
             mirror.SetActive(false);
             convexMirror.SetActive(true);
             concaveMirror.SetActive(false);
+            Destroy(collision.gameObject);
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
             mirror.SetActive(false);
             convexMirror.SetActive(false);
             concaveMirror.SetActive(true);
+            Destroy(collision.gameObject);
         }
     }
 }

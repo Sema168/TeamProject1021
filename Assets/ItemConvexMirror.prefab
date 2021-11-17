@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1787179436784021013}
   - component: {fileID: 3121425388475939571}
-  - component: {fileID: 2481635471199095885}
   - component: {fileID: 3863233724180478776}
   m_Layer: 0
   m_Name: ItemConvexMirror
@@ -84,18 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2481635471199095885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7195620057088738559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666de4319e412e940965cf0ac5a8572f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &3863233724180478776
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

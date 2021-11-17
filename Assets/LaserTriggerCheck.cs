@@ -20,18 +20,21 @@ public class LaserTriggerCheck : MonoBehaviour
             root.GetComponent<CircleCollider2D>().isTrigger = true;
         }
     }
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Laser")
-        {
-            root.GetComponent<CircleCollider2D>().isTrigger = true;
-        }
-    }
+    //public void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Laser")
+    //    {
+    //        root.GetComponent<CircleCollider2D>().isTrigger = true;
+    //        Debug.Log("êNì¸ÇµÇΩ");
+
+    //    }
+    //}
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Laser")
         {
             root.GetComponent<CircleCollider2D>().isTrigger = false;
+            Debug.Log("äOÇ…èoÇΩ");
         }
     }
 }

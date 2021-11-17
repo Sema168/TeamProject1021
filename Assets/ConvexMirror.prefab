@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4603933778203810250}
   - component: {fileID: 898648996075539756}
-  - component: {fileID: 385525105393056658}
   - component: {fileID: 1348218688006802663}
   - component: {fileID: 1430418672024184876}
+  - component: {fileID: -5306578772760127224}
   m_Layer: 0
   m_Name: ConvexMirror
   m_TagString: ConcavaMirror
@@ -85,18 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &385525105393056658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4968271980703068960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666de4319e412e940965cf0ac5a8572f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &1348218688006802663
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,3 +122,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-5306578772760127224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4968271980703068960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc5d3a3d4d84a468f1ce2280d5eb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 2208831388216788466, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}
