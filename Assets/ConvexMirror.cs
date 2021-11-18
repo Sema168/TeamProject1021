@@ -13,7 +13,7 @@ public class ConvexMirror : MonoBehaviour
         timeleft -= Time.deltaTime;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Laser")
         {

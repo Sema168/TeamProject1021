@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserTriggerCheck : MonoBehaviour
 {
-    public GameObject root;
+   　private GameObject root;
 
     void Start()
     {
@@ -13,28 +13,25 @@ public class LaserTriggerCheck : MonoBehaviour
     }
 
     //弾が重なる時はすり抜け、離れると当たり判定を得る
-    public void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Laser")
         {
             root.GetComponent<CircleCollider2D>().isTrigger = true;
         }
     }
-    //public void OnTriggerStay2D(Collider2D collision)
+    //void OnTriggerStay2D(Collider2D collision)
     //{
     //    if (collision.tag == "Laser")
     //    {
     //        root.GetComponent<CircleCollider2D>().isTrigger = true;
-    //        Debug.Log("侵入した");
-
     //    }
     //}
-    public void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Laser")
         {
             root.GetComponent<CircleCollider2D>().isTrigger = false;
-            Debug.Log("外に出た");
         }
     }
 }

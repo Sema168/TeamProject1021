@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -665669174102253223}
   m_Layer: 0
   m_Name: ConcaveMirror
-  m_TagString: ConcavaMirror
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

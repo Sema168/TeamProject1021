@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    [Header("ìGÇÃíe")] public GameObject laserPrefab;
-
     private Vector2 lastVelocity;
     private Rigidbody2D rb;
 
@@ -14,7 +12,7 @@ public class Laser : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //èüéËÇ…ìÆÇ©Ç∑ÇΩÇﬂÇÃÉvÉçÉOÉâÉÄÅAå„ÇŸÇ«è¡ÇµÇ‹Ç∑
-        rb.velocity = new Vector2(0, 4);
+        rb.velocity = new Vector2(0, -4);
     }
 
     void FixedUpdate()
@@ -22,7 +20,7 @@ public class Laser : MonoBehaviour
         lastVelocity = this.rb.velocity;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Mirror")
         {
@@ -52,5 +50,12 @@ public class Laser : MonoBehaviour
     {
         Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
         this.rb.velocity = refrectVec;
+        //éOïbå„Ç…è¡Ç∑
+        Invoke("Destroy", 3.0f);
+    }
+
+    void Destroy ()
+    {
+        Destroy(gameObject);
     }
 }
