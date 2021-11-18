@@ -18,6 +18,7 @@ public class LaserTriggerCheck : MonoBehaviour
         if (collision.tag == "Laser")
         {
             root.GetComponent<CircleCollider2D>().isTrigger = true;
+            Debug.Log("侵入した！");
         }
     }
     //void OnTriggerStay2D(Collider2D collision)
@@ -32,6 +33,7 @@ public class LaserTriggerCheck : MonoBehaviour
         if (collision.tag == "Laser")
         {
             root.GetComponent<CircleCollider2D>().isTrigger = false;
+            Debug.Log("外に出た！");
         }
     }
 }

@@ -56,6 +56,6 @@ public class Laser : MonoBehaviour
 
     void Destroy ()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
