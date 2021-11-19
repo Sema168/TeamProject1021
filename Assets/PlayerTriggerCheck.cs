@@ -8,8 +8,8 @@ public class PlayerTriggerCheck : MonoBehaviour
     {
         if (collision.tag == "Laser" || collision.tag == "Enemy") 
         {
-            Debug.Log("ダメージを受けた！");
-            Destroy(collision.gameObject);
+            //Debug.Log("ダメージを受けた！");
+            //Destroy(collision.gameObject);
         }
     }
 }

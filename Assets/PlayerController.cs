@@ -10,11 +10,11 @@ public class PlayerController : MonoBehaviour
     [Header("移動速度")] public float speed;
 
     private Rigidbody2D rb;
-    //private int count = 0;
-    //private int mirrorNum = 0;
-    //private int mirrorStock = 1;
-    //private int convexMirrorStock = 0;
-    //private int concaveMirrorStock = 0;
+    private int count = 0;
+    private int mirrorNum = 0;
+    private int mirrorStock = 1;
+    private int convexMirrorStock = 0;
+    private int concaveMirrorStock = 0;
 
     void Start()
     {
@@ -29,29 +29,29 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = rotation;
 
         //スペースキーで鏡を切り替える(要相談)
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    count++;
-        //    mirrorNum = count % 3;
-        //    if (mirrorNum == 2 && mirrorStock > 0) 
-        //    {
-        //        mirror.SetActive(true);
-        //        convexMirror.SetActive(false);
-        //        concaveMirror.SetActive(false);
-        //    }
-        //    else if (mirrorNum == 1 && convexMirrorStock > 0)
-        //    {
-        //        mirror.SetActive(false);
-        //        convexMirror.SetActive(true);
-        //        concaveMirror.SetActive(false);
-        //    }
-        //    else if (mirrorNum == 0 && concaveMirrorStock > 0)
-        //    {
-        //        mirror.SetActive(false);
-        //        convexMirror.SetActive(false);
-        //        concaveMirror.SetActive(true);
-        //    }
-        //}
+        if (Input.GetKeyDown("space"))
+        {
+            count++;
+            mirrorNum = count % 3;
+            if (mirrorNum == 2 && mirrorStock > 0)
+            {
+                mirror.SetActive(true);
+                convexMirror.SetActive(false);
+                concaveMirror.SetActive(false);
+            }
+            else if (mirrorNum == 1 && convexMirrorStock > 0)
+            {
+                mirror.SetActive(false);
+                convexMirror.SetActive(true);
+                concaveMirror.SetActive(false);
+            }
+            else if (mirrorNum == 0 && concaveMirrorStock > 0)
+            {
+                mirror.SetActive(false);
+                convexMirror.SetActive(false);
+                concaveMirror.SetActive(true);
+            }
+        }
     }
 
     void FixedUpdate()
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             mirror.SetActive(true);
             convexMirror.SetActive(false);
             concaveMirror.SetActive(false);
-            //mirrorStock++;
+            mirrorStock++;
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "ItemConvexMirror")
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             mirror.SetActive(false);
             convexMirror.SetActive(true);
             concaveMirror.SetActive(false);
-            //convexMirrorStock++;
+            convexMirrorStock++;
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "ItemConcaveMirror")
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
             mirror.SetActive(false);
             convexMirror.SetActive(false);
             concaveMirror.SetActive(true);
-            //concaveMirrorStock++;
+            concaveMirrorStock++;
             Destroy(collision.gameObject);
         }
     }
