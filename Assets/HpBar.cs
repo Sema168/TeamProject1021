@@ -5,11 +5,17 @@ using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour
 {
-    //最大HPと現在のHP。
-    int maxHp = 155;
+    /// <summary>
+    /// 最大HP
+    /// </summary>
+    int maxHp = 100;
+
+    /// <summary>
+    /// 現在のHP
+    /// </summary>
     int currentHp;
-    //Sliderを入れる
-    public Slider slider;
+
+    [Header("HPのSlider")] public Slider slider;
 
     void Start()
     {
@@ -17,43 +23,47 @@ public class HpBar : MonoBehaviour
         slider.value = 1;
         //現在のHPを最大HPと同じに。
         currentHp = maxHp;
-        Debug.Log("Start currentHp : " + currentHp);
     }
 
     void Update()
     {
+        //右クリックを押した時
         if (Input.GetMouseButtonDown(1))
         {
-            //回復する処理
-            int heal = 20;
-            currentHp = currentHp + heal;
-            if (currentHp > maxHp)
-            {
-                currentHp = 155;
-            }
-            slider.value = (float)currentHp / (float)maxHp; ;
+            Heal();
         }
     }
 
     //ColliderオブジェクトのIsTriggerにチェック入れること。
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //Enemyタグのオブジェクトに触れると発動
         if (collider.gameObject.tag == "Enemy"|| collider.gameObject.tag == "Laser")
         {
-            //ダメージは1～100の中でランダムに決める。
+            //ダメージ数
             int damage = 20;
-            Debug.Log("damage : " + damage);
 
             //現在のHPからダメージを引く
             currentHp = currentHp - damage;
-            Debug.Log("After currentHp : " + currentHp);
 
             //最大HPにおける現在のHPをSliderに反映。
-            //int同士の割り算は小数点以下は0になるので、
-            //(float)をつけてfloatの変数として振舞わせる。
             slider.value = (float)currentHp / (float)maxHp; ;
-            Debug.Log("slider.value : " + slider.value);
         }
+    }
+
+    /// <summary>
+    /// 回復スキルの処理
+    /// </summary>
+    public void Heal()
+    {
+        //回復量
+        int heal = 20;
+
+        currentHp = currentHp + heal;
+        //現在のHPが最大HPを超えた時、最大HPと同じにする
+        if (currentHp > maxHp)
+        {
+            currentHp = maxHp;
+        }
+        slider.value = (float)currentHp / (float)maxHp; ;
     }
 }
