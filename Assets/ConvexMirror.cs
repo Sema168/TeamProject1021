@@ -28,17 +28,20 @@ public class ConvexMirror : MonoBehaviour
             {
                 timeleft = 0.2f;
 
+                //’e‚ðŽO”­‚ÉŠgŽU‚·‚é(‚±‚ÌƒXƒNƒŠƒvƒg‚ðŠÈ—ª‰»‚µ‚½‚¢)
                 GameObject newLaser = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser.GetComponent<CircleCollider2D>().isTrigger = true;
-                newLaser.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(1, 3));
+                newLaser.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(2, 2));
                 GameObject newLaser2 = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser2.GetComponent<CircleCollider2D>().isTrigger = true;
-                newLaser2.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(-1, 3));
+                newLaser2.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(-2, 2));
                 GameObject newLaser3 = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser3.GetComponent<CircleCollider2D>().isTrigger = true;
                 newLaser3.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(0, 4));
-
-
+                Destroy(collision.gameObject);
+                Destroy(newLaser, 3.0f);
+                Destroy(newLaser2, 3.0f);
+                Destroy(newLaser3, 3.0f);
             }
         }
     }

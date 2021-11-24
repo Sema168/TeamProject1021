@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 48310592}
   - component: {fileID: 48310591}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EneBarScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4789e41c6b2641a3d4c364dbec11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxEne: 100
   eneSlider: {fileID: 397246196}
 --- !u!4 &48310592
 Transform:
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4073236}
+  eneSlider: {fileID: 397246196}
 --- !u!1 &459246549
 GameObject:
   m_ObjectHideFlags: 0

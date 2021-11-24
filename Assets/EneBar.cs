@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class EneBar : MonoBehaviour
 {
-    /// <summary>
-    /// 最大エネルギー量
-    /// </summary>
-    int maxEne = 100;
+    [Header("最大エネルギー量")] public int maxEne;
+    [Header("エネルギーのSlider")] public Slider eneSlider;
 
     /// <summary>
     /// 現在のエネルギー量
     /// </summary>
-    int currentEne;
+    private int currentEne;
+    /// <summary>
+    /// エネルギーの消費量
+    /// </summary>
+    private int cost;
 
-    [Header("エネルギーのSlider")] public Slider eneSlider;
 
     void Start()
     {
@@ -30,14 +31,18 @@ public class EneBar : MonoBehaviour
         //右クリックを押した時
         if (Input.GetMouseButtonDown(1))
         {
-            //エネルギーの消費量
-            int cost = 20;
+            //エネルギーが消費量分残っているとき
+            if (eneSlider.value >= cost / maxEne)
+            {
+                //エネルギーの消費量
+                cost = 50;
 
-            //現在のエネルギーから消費量を引く
-            currentEne = currentEne - cost;
+                //現在のエネルギーから消費量を引く
+                currentEne = currentEne - cost;
 
-            //最大エネルギーにおける現在のエネルギーをSliderに反映。
-            eneSlider.value = (float)currentEne / (float)maxEne;
+                //最大エネルギーにおける現在のエネルギーをSliderに反映。
+                eneSlider.value = (float)currentEne / (float)maxEne;
+            }
         }
     }
 }

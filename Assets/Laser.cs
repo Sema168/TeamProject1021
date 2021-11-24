@@ -37,7 +37,7 @@ public class Laser : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             Debug.Log("ãæÅAìGà»äOÇ…êGÇÍÇΩÅI");
         }
     }
@@ -51,7 +51,7 @@ public class Laser : MonoBehaviour
         Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
         this.rb.velocity = refrectVec;
         //éOïbå„Ç…è¡Ç∑
-        Invoke("Destroy", 3.0f);
+        Destroy(gameObject, 3.0f);
     }
 
     void Destroy ()

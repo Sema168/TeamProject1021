@@ -16,6 +16,8 @@ public class HpBar : MonoBehaviour
     int currentHp;
 
     [Header("HPのSlider")] public Slider slider;
+    [Header("エネルギーのSlider")] public Slider eneSlider;
+
 
     void Start()
     {
@@ -28,7 +30,7 @@ public class HpBar : MonoBehaviour
     void Update()
     {
         //右クリックを押した時
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && eneSlider.value >= 0.5f)
         {
             Heal();
         }
@@ -56,7 +58,7 @@ public class HpBar : MonoBehaviour
     public void Heal()
     {
         //回復量
-        int heal = 20;
+        int heal = maxHp;
 
         currentHp = currentHp + heal;
         //現在のHPが最大HPを超えた時、最大HPと同じにする
