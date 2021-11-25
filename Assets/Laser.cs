@@ -38,7 +38,7 @@ public class Laser : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log("鏡、敵以外に触れた！");
+            //Debug.Log("鏡、敵以外に触れた！");
         }
     }
 
@@ -51,11 +51,6 @@ public class Laser : MonoBehaviour
         Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
         this.rb.velocity = refrectVec;
         //三秒後に消す
-        Destroy(gameObject, 3.0f);
-    }
-
-    void Destroy ()
-    {
-        //Destroy(gameObject);
+        //Destroy(gameObject, 3.0f);
     }
 }

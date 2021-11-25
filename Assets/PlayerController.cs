@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private int count = 0;
     private int mirrorNum = 0;
-    private int mirrorStock = 1;
-    private int convexMirrorStock = 0;
-    private int concaveMirrorStock = 0;
+
+    //‹¾‚ÌŠ”
+    public int mirrorStock = 1;
+    public int convexMirrorStock = 0;
+    public int concaveMirrorStock = 0;
 
     void Start()
     {

@@ -7,7 +7,7 @@ public class EneBar : MonoBehaviour
 {
     [Header("最大エネルギー量")] public int maxEne;
     [Header("エネルギーのSlider")] public Slider eneSlider;
-    public HpBar hpBar;
+    [Header("HpBarのスクリプト")] public HpBar hpBar;
 
     /// <summary>
     /// 現在のエネルギー量
