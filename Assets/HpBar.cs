@@ -15,14 +15,14 @@ public class HpBar : MonoBehaviour
     /// </summary>
     int currentHp;
 
-    [Header("HPのSlider")] public Slider slider;
+    [Header("HPのSlider")] public Slider hpSlider;
     [Header("エネルギーのSlider")] public Slider eneSlider;
 
 
     void Start()
     {
         //Sliderを満タンにする。
-        slider.value = 1;
+        hpSlider.value = 1;
         //現在のHPを最大HPと同じに。
         currentHp = maxHp;
     }
@@ -32,7 +32,7 @@ public class HpBar : MonoBehaviour
         //右クリックを押した時
         if (Input.GetMouseButtonDown(1) && eneSlider.value >= 0.5f)
         {
-            Heal();
+            //Heal();
         }
     }
 
@@ -48,7 +48,7 @@ public class HpBar : MonoBehaviour
             currentHp = currentHp - damage;
 
             //最大HPにおける現在のHPをSliderに反映。
-            slider.value = (float)currentHp / (float)maxHp; ;
+            hpSlider.value = (float)currentHp / (float)maxHp; ;
         }
     }
 
@@ -66,6 +66,6 @@ public class HpBar : MonoBehaviour
         {
             currentHp = maxHp;
         }
-        slider.value = (float)currentHp / (float)maxHp; ;
+        hpSlider.value = (float)currentHp / (float)maxHp; ;
     }
 }
