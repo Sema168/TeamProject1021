@@ -258,6 +258,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &218771482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8379305213832653332, guid: 1e11d98e0b23b0c4898df1d1db09bdf8, type: 3}
+  m_PrefabInstance: {fileID: 1700692726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &264585961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -512,6 +517,7 @@ GameObject:
   - component: {fileID: 420994074}
   - component: {fileID: 420994073}
   - component: {fileID: 420994077}
+  - component: {fileID: 420994079}
   - component: {fileID: 420994078}
   m_Layer: 0
   m_Name: Player
@@ -633,16 +639,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 420994072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc973de57e65aa4ca1e3c1db44bede0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e3b480373cf2b44e916605a2b1b8ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirror: {fileID: 899563575}
-  convexMirror: {fileID: 613005081}
-  concaveMirror: {fileID: 930911449}
-  speed: 4
-  mirrorStock: 1
-  convexMirrorStock: 0
-  concaveMirrorStock: 0
 --- !u!114 &420994078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +656,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpSlider: {fileID: 4073236}
   eneSlider: {fileID: 397246196}
+--- !u!114 &420994079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420994072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986b11ff173b91346b54e58276529eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirror: {fileID: 218771482}
+  convexMirror: {fileID: 7195620057088738559, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
+  concaveMirror: {fileID: 8174878728677988490, guid: 0841063df5077e44e9bcb9a5dd2eae26, type: 3}
+  speed: 4
+  mirrorStock: 1
+  convexMirrorStock: 0
+  concaveMirrorStock: 0
 --- !u!1 &459246549
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 420994077}
+  player: {fileID: 0}
 --- !u!1 &616775283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,7 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 420994077}
+  player: {fileID: 0}
 --- !u!1 &911923280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,11 +1687,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &930911449 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6200793415988725206, guid: a39fa99e3a0abbc4586efb5db4ecc329, type: 3}
-  m_PrefabInstance: {fileID: 769079843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &930911450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1768077191503942063, guid: a39fa99e3a0abbc4586efb5db4ecc329, type: 3}
