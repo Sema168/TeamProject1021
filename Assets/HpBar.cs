@@ -16,8 +16,6 @@ public class HpBar : MonoBehaviour
     int currentHp;
 
     [Header("HPのSlider")] public Slider hpSlider;
-    [Header("エネルギーのSlider")] public Slider eneSlider;
-
 
     void Start()
     {
@@ -27,19 +25,9 @@ public class HpBar : MonoBehaviour
         currentHp = maxHp;
     }
 
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //右クリックを押した時
-        if (Input.GetMouseButtonDown(1) && eneSlider.value >= 0.5f)
-        {
-            Heal();
-        }
-    }
-
-    //ColliderオブジェクトのIsTriggerにチェック入れること。
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Enemy"|| collider.gameObject.tag == "Laser")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Laser")
         {
             //ダメージ数
             int damage = 20;

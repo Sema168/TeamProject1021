@@ -14,9 +14,10 @@ public class PlayerController : MonoBehaviour
     private int mirrorNum = 0;
 
     //鏡の所持数
+    int Stock;
     public int mirrorStock = 1;
-    public int convexMirrorStock = 0;
-    public int concaveMirrorStock = 0;
+    public int convexMirrorStock = 1;
+    public int concaveMirrorStock = 1;
 
     void Start()
     {
@@ -29,6 +30,12 @@ public class PlayerController : MonoBehaviour
         var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
+
+        //Stock = mirrorStock + convexMirrorStock + concaveMirrorStock;
+        //if (Stock > 3)
+        //{
+
+        //}
 
         //スペースキーで鏡を切り替える(要相談)
         if (Input.GetKeyDown("space"))
@@ -70,25 +77,28 @@ public class PlayerController : MonoBehaviour
         //鏡を取った時、その鏡を装備する or 鏡をストックする(要相談)
         if (collision.tag == "ItemMirror")
         {
-            mirror.SetActive(true);
-            convexMirror.SetActive(false);
-            concaveMirror.SetActive(false);
-            mirrorStock++;
+            //mirror.SetActive(true);
+            //convexMirror.SetActive(false);
+            //concaveMirror.SetActive(false);
+            
             Destroy(collision.gameObject);
+            mirrorStock++;
+            Debug.Log(mirrorStock);
+
         }
         else if (collision.tag == "ItemConvexMirror")
         {
-            mirror.SetActive(false);
-            convexMirror.SetActive(true);
-            concaveMirror.SetActive(false);
+            //mirror.SetActive(false);
+            //convexMirror.SetActive(true);
+            //concaveMirror.SetActive(false);
             convexMirrorStock++;
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
-            mirror.SetActive(false);
-            convexMirror.SetActive(false);
-            concaveMirror.SetActive(true);
+            //mirror.SetActive(false);
+            //convexMirror.SetActive(false);
+            //concaveMirror.SetActive(true);
             concaveMirrorStock++;
             Destroy(collision.gameObject);
         }
