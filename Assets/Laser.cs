@@ -12,7 +12,7 @@ public class Laser : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //Ÿè‚É“®‚©‚·‚½‚ß‚ÌƒvƒƒOƒ‰ƒ€AŒã‚Ù‚ÇÁ‚µ‚Ü‚·
-        //rb.velocity = new Vector2(0, -4);
+        rb.velocity = new Vector2(0, 4);
     }
 
     void FixedUpdate()

@@ -33,14 +33,14 @@ public class EneBar : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             //エネルギーの消費量
-            cost = 110;
+            cost = 50;
 
             //エネルギーが消費量分残っているとき
             if (eneSlider.value >= (float)cost / (float)maxEne)
             {
                 EneSliderControll();
-                hpBar.Heal();
-                Debug.Log("回復した");
+                //hpBar.Heal();
+                //Debug.Log("回復した");
             }
         }
     }

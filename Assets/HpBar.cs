@@ -32,7 +32,7 @@ public class HpBar : MonoBehaviour
         //右クリックを押した時
         if (Input.GetMouseButtonDown(1) && eneSlider.value >= 0.5f)
         {
-            //Heal();
+            Heal();
         }
     }
 
