@@ -42,13 +42,13 @@ public class PlayerController : MonoBehaviour
         {
             count++;
             mirrorNum = count % 3;
-            if (mirrorNum == 2 && mirrorStock > 0)
+            if (mirrorNum == 1 && mirrorStock > 0)
             {
                 mirror.SetActive(true);
                 convexMirror.SetActive(false);
                 concaveMirror.SetActive(false);
             }
-            else if (mirrorNum == 1 && convexMirrorStock > 0)
+            else if (mirrorNum == 2 && convexMirrorStock > 0)
             {
                 mirror.SetActive(false);
                 convexMirror.SetActive(true);

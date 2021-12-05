@@ -22,6 +22,9 @@ public class EneBar : MonoBehaviour
     /// </summary>
     private float eneHeal= 5.0f;
 
+    int count = 0;
+    int skillNum = 0;
+
 
     void Start()
     {
@@ -33,22 +36,32 @@ public class EneBar : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            count++;
+            skillNum = count % 3;
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
-            //エネルギーの消費量
-            cost = 50;
-
-            //HPが満タンでない時
-            if (hpBar.hpSlider.value != 1)
+            if (skillNum == 1)
             {
-                //エネルギーが消費量分残っているとき
-                if (eneSlider.value >= cost / maxEne)
+                //エネルギーの消費量
+                cost = 50;
+
+                //HPが満タンでない時
+                if (hpBar.hpSlider.value != 1)
                 {
-                    EneSliderControll();
-                    hpBar.Heal();
+                    //エネルギーが消費量分残っているとき
+                    if (eneSlider.value >= cost / maxEne)
+                    {
+                        EneSliderControll();
+                        hpBar.Heal();
+                    }
                 }
             }
         }
+
     }
 
     /// <summary>
