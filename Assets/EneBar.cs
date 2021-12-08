@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class EneBar : MonoBehaviour
 {
-    [Header("最大エネルギー量")] public float maxEne;
     [Header("エネルギーのSlider")] public Slider eneSlider;
     [Header("HpBarのスクリプト")] public HpBar hpBar;
 
+    /// <summary>
+    /// 最大エネルギー量
+    /// </summary>
+    private float maxEne = 100.0f;
     /// <summary>
     /// 現在のエネルギー量
     /// </summary>
@@ -23,7 +26,7 @@ public class EneBar : MonoBehaviour
     private float eneHeal= 5.0f;
 
     int count = 0;
-    int skillNum = 0;
+    int skillNum;
 
 
     void Start()
@@ -46,13 +49,32 @@ public class EneBar : MonoBehaviour
         {
             if (skillNum == 1)
             {
-                //エネルギーの消費量
-                cost = 50;
+                cost = 30.0f;
+
+                //エネルギーが消費量分残っているとき
+                if (eneSlider.value >= cost / maxEne)
+                {
+                    EneSliderControll();
+                    Debug.Log("バリア発動！");
+                }
+            }
+            else if (skillNum == 2)
+            {
+                cost = 40.0f;
+
+                if (eneSlider.value >= cost / maxEne)
+                {
+                    EneSliderControll();
+                    Debug.Log("分身発動！");
+                }
+            }
+            else
+            {
+                cost = 50.0f;
 
                 //HPが満タンでない時
                 if (hpBar.hpSlider.value != 1)
                 {
-                    //エネルギーが消費量分残っているとき
                     if (eneSlider.value >= cost / maxEne)
                     {
                         EneSliderControll();
@@ -61,7 +83,6 @@ public class EneBar : MonoBehaviour
                 }
             }
         }
-
     }
 
     /// <summary>
@@ -76,6 +97,9 @@ public class EneBar : MonoBehaviour
         eneSlider.value = currentEne / maxEne;
     }
 
+    /// <summary>
+    /// エネルギーを回復する
+    /// </summary>
     public void EneHeal()
     {
         currentEne = currentEne + eneHeal;

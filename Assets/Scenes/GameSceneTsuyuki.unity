@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4789e41c6b2641a3d4c364dbec11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEne: 100
   eneSlider: {fileID: 397246196}
   hpBar: {fileID: 420994078}
 --- !u!4 &48310592
@@ -1081,6 +1080,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4603933778203810250, guid: 57ad6a6dba9682f43a3140712ab685c1, type: 3}
   m_PrefabInstance: {fileID: 1890665234}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &613005088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613005081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e4c3718bdc36f47a23b0537d60b42d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eneBar: {fileID: 48310591}
+--- !u!114 &613005089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613005081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 420994077}
+  mirror: {fileID: 899563575}
+  convexMirror: {fileID: 613005081}
+  concaveMirror: {fileID: 930911449}
 --- !u!1 &616775283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 420994077}
+  mirror: {fileID: 899563575}
+  convexMirror: {fileID: 613005081}
+  concaveMirror: {fileID: 930911449}
 --- !u!114 &899563581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,6 +1865,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1768077191503942063, guid: a39fa99e3a0abbc4586efb5db4ecc329, type: 3}
   m_PrefabInstance: {fileID: 769079843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &930911454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930911449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e4c3718bdc36f47a23b0537d60b42d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eneBar: {fileID: 48310591}
+--- !u!114 &930911455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930911449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 420994077}
+  mirror: {fileID: 899563575}
+  convexMirror: {fileID: 613005081}
+  concaveMirror: {fileID: 930911449}
 --- !u!1 &1094271315
 GameObject:
   m_ObjectHideFlags: 0

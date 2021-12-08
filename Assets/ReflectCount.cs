@@ -4,31 +4,62 @@ using UnityEngine;
 
 public class ReflectCount : MonoBehaviour
 {
-    public PlayerController player;
-    int count;
+    [Header("プレイヤースクリプト")] public PlayerController player;
+    [Header("鏡のプレファブ")] public GameObject mirror;
+    [Header("凸面鏡のプレファブ")] public GameObject convexMirror;
+    [Header("凹面鏡のプレファブ")] public GameObject concaveMirror;
+
+    private int countMirror;
+    private int countCvMirror;
+    private int countCcMirror;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision .gameObject .tag == "Laser")
         {
-            count++;
-            Debug.Log("ぶつかった");
+            if (mirror.activeSelf == true)
+            {
+                countMirror++;
+                Debug.Log("ぶつかった");
+            }
+            else if (convexMirror.activeSelf == true)
+            {
+                countCvMirror++;
+                Debug.Log("ぶつかった");
+            }
+            else if (concaveMirror.activeSelf == true)
+            {
+                countCcMirror++;
+                Debug.Log("ぶつかった");
+            }
         }
-    }
-    void Start()
-    {
-        GameObject mirror = GameObject.Find("mirror");
     }
 
     void Update()
     {
-        if (count >= 5)
+        if (countMirror >= 10)
         {
-            player.mirror.SetActive(false);
-            player.convexMirror.SetActive(false);
-            player.concaveMirror.SetActive(false);
+            mirror.SetActive(false);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(false);
             player.mirrorStock -= 1;
-            count = 0;
+            countMirror = 0;
         }
-
+        if (countCvMirror >= 10)
+        {
+            mirror.SetActive(false);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(false);
+            player.convexMirrorStock -= 1;
+            countCvMirror = 0;
+        }
+        if (countCcMirror >= 10)
+        {
+            mirror.SetActive(false);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(false);
+            player.concaveMirrorStock -= 1;
+            countCcMirror = 0;
+        }
     }
 }
