@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     private int mirrorNum = 0;
 
     //鏡の所持数
-    int Stock;
-    public int mirrorStock = 1;
-    public int convexMirrorStock = 1;
-    public int concaveMirrorStock = 1;
+    private int stock;
+    private int maxStock = 3;
+    public int mirrorStock;
+    public int convexMirrorStock;
+    public int concaveMirrorStock;
 
     void Start()
     {
@@ -26,18 +27,14 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        stock = mirrorStock + concaveMirrorStock + convexMirrorStock;
+
         //マウスの方を向く処理
         var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
 
-        //Stock = mirrorStock + convexMirrorStock + concaveMirrorStock;
-        //if (Stock > 3)
-        //{
-
-        //}
-
-        //スペースキーで鏡を切り替える(要相談)
+        //スペースキーで鏡を切り替える
         if (Input.GetKeyDown("space"))
         {
             count++;
@@ -72,34 +69,31 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(horizontalKey, verticalKey);
     }
 
-   　void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        //鏡を取った時、その鏡を装備する or 鏡をストックする(要相談)
+        //鏡を取った時、その鏡をストックする
         if (collision.tag == "ItemMirror")
         {
-            //mirror.SetActive(true);
-            //convexMirror.SetActive(false);
-            //concaveMirror.SetActive(false);
-            
+            if (stock < maxStock)
+            {
+                mirrorStock++;
+            }
             Destroy(collision.gameObject);
-            mirrorStock++;
-            Debug.Log(mirrorStock);
-
         }
         else if (collision.tag == "ItemConvexMirror")
         {
-            //mirror.SetActive(false);
-            //convexMirror.SetActive(true);
-            //concaveMirror.SetActive(false);
-            convexMirrorStock++;
+            if (stock < maxStock)
+            {
+                convexMirrorStock++;
+            }
             Destroy(collision.gameObject);
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
-            //mirror.SetActive(false);
-            //convexMirror.SetActive(false);
-            //concaveMirror.SetActive(true);
-            concaveMirrorStock++;
+            if (stock < maxStock)
+            {
+                concaveMirrorStock++;
+            }
             Destroy(collision.gameObject);
         }
     }

@@ -20,17 +20,14 @@ public class ReflectCount : MonoBehaviour
             if (mirror.activeSelf == true)
             {
                 countMirror++;
-                Debug.Log("‚Ô‚Â‚©‚Á‚½");
             }
             else if (convexMirror.activeSelf == true)
             {
                 countCvMirror++;
-                Debug.Log("‚Ô‚Â‚©‚Á‚½");
             }
             else if (concaveMirror.activeSelf == true)
             {
                 countCcMirror++;
-                Debug.Log("‚Ô‚Â‚©‚Á‚½");
             }
         }
     }
@@ -40,23 +37,17 @@ public class ReflectCount : MonoBehaviour
         if (countMirror >= 10)
         {
             mirror.SetActive(false);
-            convexMirror.SetActive(false);
-            concaveMirror.SetActive(false);
             player.mirrorStock -= 1;
             countMirror = 0;
         }
         if (countCvMirror >= 10)
         {
-            mirror.SetActive(false);
             convexMirror.SetActive(false);
-            concaveMirror.SetActive(false);
             player.convexMirrorStock -= 1;
             countCvMirror = 0;
         }
         if (countCcMirror >= 10)
         {
-            mirror.SetActive(false);
-            convexMirror.SetActive(false);
             concaveMirror.SetActive(false);
             player.concaveMirrorStock -= 1;
             countCcMirror = 0;

@@ -31,10 +31,10 @@ public class EneBar : MonoBehaviour
 
     void Start()
     {
-        //Sliderを満タンにする。
-        eneSlider.value = 1;
-        //現在のエネルギーを最大エネルギーと同じに。
-        currentEne = maxEne;
+        ////Sliderを満タンにする。
+        //eneSlider.value = 1;
+        ////現在のエネルギーを最大エネルギーと同じに。
+        //currentEne = maxEne;
     }
 
     void Update()
@@ -104,5 +104,10 @@ public class EneBar : MonoBehaviour
     {
         currentEne = currentEne + eneHeal;
         eneSlider.value = currentEne / maxEne;
+
+        if (currentEne > maxEne)
+        {
+            currentEne = maxEne;
+        }
     }
 }

@@ -38,7 +38,6 @@ public class Laser : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            //Debug.Log("‹¾A“GˆÈŠO‚ÉG‚ê‚½I");
         }
     }
 

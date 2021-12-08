@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour
 {
+    [Header("HPÇÃSlider")] public Slider hpSlider;
+
     /// <summary>
     /// ç≈ëÂHP
     /// </summary>
-    int maxHp = 100;
-
+    private int maxHp = 100;
     /// <summary>
     /// åªç›ÇÃHP
     /// </summary>
-    int currentHp;
+    private int currentHp;
 
-    [Header("HPÇÃSlider")] public Slider hpSlider;
 
     void Start()
     {
