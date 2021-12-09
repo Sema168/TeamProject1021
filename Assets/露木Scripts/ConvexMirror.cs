@@ -16,7 +16,7 @@ public class ConvexMirror : MonoBehaviour
     /// <summary>
     /// ”½ËŒã‚ÉÁ‚¦‚éŠÔ
     /// </summary>
-    private float destroyTime = 3.0f;
+    private float destroyTime = 1.5f;
     private float timeleft;
     private Rigidbody2D rb;
 

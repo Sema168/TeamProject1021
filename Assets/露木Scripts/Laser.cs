@@ -12,7 +12,7 @@ public class Laser : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //勝手に動かすためのプログラム、後ほど消します
-        //rb.velocity = new Vector2(0, -4);
+        //rb.velocity = new Vector2(0, 6);
     }
 
     void FixedUpdate()
@@ -38,7 +38,6 @@ public class Laser : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            //Debug.Log("鏡、敵以外に触れた！");
         }
     }
 

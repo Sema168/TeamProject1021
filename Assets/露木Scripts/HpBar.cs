@@ -5,18 +5,16 @@ using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour
 {
+    [Header("HPのSlider")] public Slider hpSlider;
+
     /// <summary>
     /// 最大HP
     /// </summary>
-    int maxHp = 100;
-
+    private int maxHp = 100;
     /// <summary>
     /// 現在のHP
     /// </summary>
-    int currentHp;
-
-    [Header("HPのSlider")] public Slider hpSlider;
-    [Header("エネルギーのSlider")] public Slider eneSlider;
+    private int currentHp;
 
 
     void Start()
@@ -27,19 +25,9 @@ public class HpBar : MonoBehaviour
         currentHp = maxHp;
     }
 
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //右クリックを押した時
-        if (Input.GetMouseButtonDown(1) && eneSlider.value >= 0.5f)
-        {
-            //Heal();
-        }
-    }
-
-    //ColliderオブジェクトのIsTriggerにチェック入れること。
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Enemy"|| collider.gameObject.tag == "Laser")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Laser")
         {
             //ダメージ数
             int damage = 20;

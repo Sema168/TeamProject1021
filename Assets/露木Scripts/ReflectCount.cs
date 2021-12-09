@@ -4,25 +4,53 @@ using UnityEngine;
 
 public class ReflectCount : MonoBehaviour
 {
-    public PlayerController player;
-    int count;
+    [Header("プレイヤースクリプト")] public PlayerController player;
+    [Header("鏡のプレファブ")] public GameObject mirror;
+    [Header("凸面鏡のプレファブ")] public GameObject convexMirror;
+    [Header("凹面鏡のプレファブ")] public GameObject concaveMirror;
+
+    private int countMirror;
+    private int countCvMirror;
+    private int countCcMirror;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision .gameObject .tag == "Laser")
         {
-            count++;
-            Debug.Log("ぶつかった");
+            if (mirror.activeSelf == true)
+            {
+                countMirror++;
+            }
+            else if (convexMirror.activeSelf == true)
+            {
+                countCvMirror++;
+            }
+            else if (concaveMirror.activeSelf == true)
+            {
+                countCcMirror++;
+            }
         }
     }
 
     void Update()
     {
-        if (count >= 5)
+        if (countMirror >= 10)
         {
-            player.mirror.SetActive(false );
-            player.convexMirror.SetActive(false);
-            player.concaveMirror.SetActive(false);
-            count = 0;
+            mirror.SetActive(false);
+            player.mirrorStock -= 1;
+            countMirror = 0;
+        }
+        if (countCvMirror >= 10)
+        {
+            convexMirror.SetActive(false);
+            player.convexMirrorStock -= 1;
+            countCvMirror = 0;
+        }
+        if (countCcMirror >= 10)
+        {
+            concaveMirror.SetActive(false);
+            player.concaveMirrorStock -= 1;
+            countCcMirror = 0;
         }
     }
 }
