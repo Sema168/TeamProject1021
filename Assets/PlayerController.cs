@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("鏡のプレファブ")] public GameObject mirror;
-    [Header("凸面鏡のプレファブ")] public GameObject convexMirror;
-    [Header("凹面鏡のプレファブ")] public GameObject concaveMirror;
+    [Header("鏡")] public GameObject mirror;
+    [Header("凸面鏡")] public GameObject convexMirror;
+    [Header("凹面鏡")] public GameObject concaveMirror;
     [Header("移動速度")] public float speed;
 
     private Rigidbody2D rb;
@@ -16,9 +16,9 @@ public class PlayerController : MonoBehaviour
     //鏡の所持数
     private int stock;
     private int maxStock = 3;
-    public int mirrorStock;
-    public int convexMirrorStock;
-    public int concaveMirrorStock;
+    [System.NonSerialized] public int mirrorStock;
+    [System.NonSerialized] public int convexMirrorStock;
+    [System.NonSerialized] public int concaveMirrorStock;
 
     void Start()
     {
@@ -34,7 +34,55 @@ public class PlayerController : MonoBehaviour
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
 
-        //スペースキーで鏡を切り替える
+        MirrorChenge();
+    }
+
+    void FixedUpdate()
+    {
+        float horizontalKey = Input.GetAxis("Horizontal") * speed;
+        float verticalKey = Input.GetAxis("Vertical") * speed;
+
+        //移動処理
+        rb.velocity = new Vector2(horizontalKey, verticalKey);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //鏡を取った時、その鏡をストックする
+        if (collision.tag == "ItemMirror")
+        {
+            if (stock < maxStock)
+            {
+                mirrorStock++;
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("mirrorStock : " + mirrorStock) ;
+        }
+        else if (collision.tag == "ItemConvexMirror")
+        {
+            if (stock < maxStock)
+            {
+                convexMirrorStock++;
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("canvexMirrorStock : " + convexMirrorStock) ;
+        }
+        else if (collision.tag == "ItemConcaveMirror")
+        {
+            if (stock < maxStock)
+            {
+                concaveMirrorStock++;
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("concaveMirrorStock : " + concaveMirrorStock) ;
+        }
+    }
+
+    /// <summary>
+    /// 鏡の切り替え
+    /// </summary>
+    void MirrorChenge()
+    {
         if (Input.GetKeyDown("space"))
         {
             count++;
@@ -57,44 +105,6 @@ public class PlayerController : MonoBehaviour
                 convexMirror.SetActive(false);
                 concaveMirror.SetActive(true);
             }
-        }
-    }
-
-    void FixedUpdate()
-    {
-        float horizontalKey = Input.GetAxis("Horizontal") * speed;
-        float verticalKey = Input.GetAxis("Vertical") * speed;
-
-        //移動処理
-        rb.velocity = new Vector2(horizontalKey, verticalKey);
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        //鏡を取った時、その鏡をストックする
-        if (collision.tag == "ItemMirror")
-        {
-            if (stock < maxStock)
-            {
-                mirrorStock++;
-            }
-            Destroy(collision.gameObject);
-        }
-        else if (collision.tag == "ItemConvexMirror")
-        {
-            if (stock < maxStock)
-            {
-                convexMirrorStock++;
-            }
-            Destroy(collision.gameObject);
-        }
-        else if (collision.tag == "ItemConcaveMirror")
-        {
-            if (stock < maxStock)
-            {
-                concaveMirrorStock++;
-            }
-            Destroy(collision.gameObject);
         }
     }
 }

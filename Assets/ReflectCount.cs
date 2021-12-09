@@ -5,13 +5,20 @@ using UnityEngine;
 public class ReflectCount : MonoBehaviour
 {
     [Header("プレイヤースクリプト")] public PlayerController player;
-    [Header("鏡のプレファブ")] public GameObject mirror;
-    [Header("凸面鏡のプレファブ")] public GameObject convexMirror;
-    [Header("凹面鏡のプレファブ")] public GameObject concaveMirror;
+    [Header("鏡")] public GameObject mirror;
+    [Header("凸面鏡")] public GameObject convexMirror;
+    [Header("凹面鏡")] public GameObject concaveMirror;
 
     private int countMirror;
     private int countCvMirror;
     private int countCcMirror;
+
+    //耐久力
+    private int mirrorBreakNum = 10;
+    private int cvMirrorBreakNum = 5;
+    private int ccMirrorBreakNum = 10;
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,23 +41,26 @@ public class ReflectCount : MonoBehaviour
 
     void Update()
     {
-        if (countMirror >= 10)
+        if (countMirror >= mirrorBreakNum)
         {
             mirror.SetActive(false);
-            player.mirrorStock -= 1;
+            player.mirrorStock--;
             countMirror = 0;
+            Debug.Log("mirrorStock : "+ player.mirrorStock);
         }
-        if (countCvMirror >= 10)
+        if (countCvMirror >= cvMirrorBreakNum)
         {
             convexMirror.SetActive(false);
-            player.convexMirrorStock -= 1;
+            player.convexMirrorStock--;
             countCvMirror = 0;
+            Debug.Log("convexMirrorStock : "+ player.convexMirrorStock);
         }
-        if (countCcMirror >= 10)
+        if (countCcMirror >= ccMirrorBreakNum)
         {
             concaveMirror.SetActive(false);
-            player.concaveMirrorStock -= 1;
+            player.concaveMirrorStock--;
             countCcMirror = 0;
+            Debug.Log("concaveMirrorStock : "+ player.concaveMirrorStock);
         }
     }
 }

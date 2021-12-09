@@ -7,6 +7,7 @@ public class EneBar : MonoBehaviour
 {
     [Header("エネルギーのSlider")] public Slider eneSlider;
     [Header("HpBarのスクリプト")] public HpBar hpBar;
+    [Header("Barrierのスクリプト")] public Barrier barrier;
 
     /// <summary>
     /// 最大エネルギー量
@@ -31,10 +32,10 @@ public class EneBar : MonoBehaviour
 
     void Start()
     {
-        ////Sliderを満タンにする。
-        //eneSlider.value = 1;
-        ////現在のエネルギーを最大エネルギーと同じに。
-        //currentEne = maxEne;
+        //Sliderを満タンにする。
+        eneSlider.value = 1;
+        //現在のエネルギーを最大エネルギーと同じに。
+        currentEne = maxEne;
     }
 
     void Update()
@@ -55,6 +56,7 @@ public class EneBar : MonoBehaviour
                 if (eneSlider.value >= cost / maxEne)
                 {
                     EneSliderControll();
+                    barrier.BarrierSkill();
                     Debug.Log("バリア発動！");
                 }
             }
@@ -79,6 +81,7 @@ public class EneBar : MonoBehaviour
                     {
                         EneSliderControll();
                         hpBar.Heal();
+                        Debug.Log("回復発動！");
                     }
                 }
             }
