@@ -2853,5 +2853,13 @@ PrefabInstance:
       propertyPath: eneBar
       value: 
       objectReference: {fileID: 48310591}
+    - target: {fileID: 8707614990276773733, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880847125820735807, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
