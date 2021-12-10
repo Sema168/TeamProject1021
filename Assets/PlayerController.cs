@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("鏡のプレファブ")] public GameObject mirrorPrefab;
-    [Header("凸面鏡のプレファブ")] public GameObject convexMirrorPrefab;
-    [Header("凹面鏡のプレファブ")] public GameObject concaveMirrorPrefab;
+    [Header("鏡")] public GameObject mirror;
+    [Header("凸面鏡")] public GameObject convexMirror;
+    [Header("凹面鏡")] public GameObject concaveMirror;
     [Header("移動速度")] public float speed;
 
-    private Rigidbody2D rb = null;
+    private Rigidbody2D rb;
+    private int count = 0;
+    private int mirrorNum = 0;
+
+    //鏡の所持数
+    private int stock;
+    private int maxStock = 3;
+    [System.NonSerialized] public int mirrorStock;
+    [System.NonSerialized] public int convexMirrorStock;
+    [System.NonSerialized] public int concaveMirrorStock;
 
     void Start()
     {
@@ -18,38 +27,84 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        float horizontalKey = Input.GetAxis("Horizontal") * speed;
-        float verticalKey = Input.GetAxis("Vertical") * speed;
-
-        //移動処理
-        rb.velocity = new Vector2(horizontalKey, verticalKey);
+        stock = mirrorStock + concaveMirrorStock + convexMirrorStock;
 
         //マウスの方を向く処理
         var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
+
+        MirrorChenge();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void FixedUpdate()
     {
-        //鏡を取った時、その鏡を装備する
+        float horizontalKey = Input.GetAxis("Horizontal") * speed;
+        float verticalKey = Input.GetAxis("Vertical") * speed;
+
+        //移動処理
+        rb.velocity = new Vector2(horizontalKey, verticalKey);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //鏡を取った時、その鏡をストックする
         if (collision.tag == "ItemMirror")
         {
-            GameObject item = transform.Find("Weapon").gameObject;
-            GameObject weapon = Instantiate(mirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
-            weapon.transform.parent = item.transform;
+            if (stock < maxStock)
+            {
+                mirrorStock++;
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("mirrorStock : " + mirrorStock) ;
         }
         else if (collision.tag == "ItemConvexMirror")
         {
-            GameObject item = transform.Find("Weapon").gameObject;
-            GameObject weapon = Instantiate(convexMirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
-            weapon.transform.parent = item.transform;
+            if (stock < maxStock)
+            {
+                convexMirrorStock++;
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("canvexMirrorStock : " + convexMirrorStock) ;
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
-            GameObject item = transform.Find("Weapon").gameObject;
-            GameObject weapon = Instantiate(concaveMirrorPrefab, item.transform.position, item.transform.rotation) as GameObject;
-            weapon.transform.parent = item.transform;
+            if (stock < maxStock)
+            {
+                concaveMirrorStock++;
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("concaveMirrorStock : " + concaveMirrorStock) ;
+        }
+    }
+
+    /// <summary>
+    /// 鏡の切り替え
+    /// </summary>
+    void MirrorChenge()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            count++;
+            mirrorNum = count % 3;
+            if (mirrorNum == 1 && mirrorStock > 0)
+            {
+                mirror.SetActive(true);
+                convexMirror.SetActive(false);
+                concaveMirror.SetActive(false);
+            }
+            else if (mirrorNum == 2 && convexMirrorStock > 0)
+            {
+                mirror.SetActive(false);
+                convexMirror.SetActive(true);
+                concaveMirror.SetActive(false);
+            }
+            else if (mirrorNum == 0 && concaveMirrorStock > 0)
+            {
+                mirror.SetActive(false);
+                convexMirror.SetActive(false);
+                concaveMirror.SetActive(true);
+            }
         }
     }
 }

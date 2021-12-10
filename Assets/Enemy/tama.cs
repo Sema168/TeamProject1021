@@ -6,7 +6,7 @@ public class tama : MonoBehaviour
 {
     public GameObject player;
     public float speed;
-    
+
     void Start()
     {
         //Transform pz = player.GetComponent<Transform>();
@@ -15,7 +15,10 @@ public class tama : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * Time.deltaTime);
+        //Vector3.up
+        //transform.Translate(player.transform.position * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed);
         Destroy(this.gameObject, 5.0f);
     }
 }
