@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8685326888873605138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919085598960799954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4e4c3718bdc36f47a23b0537d60b42d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eneBar: {fileID: 0}
 --- !u!114 &8685326888873605139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,10 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8685326888546870322}
+  player: {fileID: 3106483522225093233}
   mirror: {fileID: 919085598960799954}
   convexMirror: {fileID: 4357975646158161949}
-  concaveMirror: {fileID: 0}
+  concaveMirror: {fileID: 3167623267144245724}
+--- !u!114 &6925175926988138898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919085598960799954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b83b6413fc552d4b8c8df2a095c908f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eneBar: {fileID: 0}
+--- !u!114 &5350722650564432041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167623267144245724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3106483522225093233}
+  mirror: {fileID: 919085598960799954}
+  convexMirror: {fileID: 4357975646158161949}
+  concaveMirror: {fileID: 3167623267144245724}
+--- !u!114 &4015195024698037125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167623267144245724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b83b6413fc552d4b8c8df2a095c908f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eneBar: {fileID: 0}
 --- !u!114 &8685326889123991310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,11 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8685326888546870322}
+  player: {fileID: 3106483522225093233}
   mirror: {fileID: 919085598960799954}
   convexMirror: {fileID: 4357975646158161949}
-  concaveMirror: {fileID: 0}
---- !u!114 &8685326889123991311
+  concaveMirror: {fileID: 3167623267144245724}
+--- !u!114 &6862206441051922474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,7 +83,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4357975646158161949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4e4c3718bdc36f47a23b0537d60b42d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b83b6413fc552d4b8c8df2a095c908f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eneBar: {fileID: 0}
@@ -103,8 +132,8 @@ GameObject:
   - component: {fileID: 8685326888546870324}
   - component: {fileID: 8685326888546870325}
   - component: {fileID: 8685326888546870326}
-  - component: {fileID: 8685326888546870322}
   - component: {fileID: 8685326888546870321}
+  - component: {fileID: 3106483522225093233}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -215,25 +244,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &8685326888546870322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8685326888546870327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc973de57e65aa4ca1e3c1db44bede0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mirror: {fileID: 919085598960799954}
-  convexMirror: {fileID: 4357975646158161949}
-  concaveMirror: {fileID: 3167623267144245724}
-  speed: 4
-  mirrorStock: 1
-  convexMirrorStock: 0
-  concaveMirrorStock: 0
 --- !u!114 &8685326888546870321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +257,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpSlider: {fileID: 0}
+--- !u!114 &3106483522225093233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685326888546870327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986b11ff173b91346b54e58276529eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirror: {fileID: 919085598960799954}
+  convexMirror: {fileID: 4357975646158161949}
+  concaveMirror: {fileID: 3167623267144245724}
+  speed: 4
+  mirrorStock: 1
+  convexMirrorStock: 0
+  concaveMirrorStock: 0
 --- !u!1001 &2500740613944722984
 PrefabInstance:
   m_ObjectHideFlags: 0
