@@ -5,20 +5,14 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    [Header("回復スキルのUI")] public GameObject heal;
-    [Header("バリアスキルのUI")] public GameObject barrier;
-    [Header("分身スキルのUI")] public GameObject increace;
-
+    public Image Image;
+    public Sprite[] sprite;
     private int count = 0;
     private int skillNum;
 
-
-
     void Start()
     {
-        heal.SetActive(true);
-        barrier.SetActive(false);
-        increace.SetActive(false);
+        Image = GetComponent<Image>();
     }
 
     void Update()
@@ -30,21 +24,15 @@ public class UI : MonoBehaviour
 
             if (skillNum == 1)
             {
-                heal.SetActive(false);
-                barrier.SetActive(true);
-                increace.SetActive(false);
+                Image.sprite = sprite[0];
             }
             else if (skillNum == 2)
             {
-                heal.SetActive(false);
-                barrier.SetActive(false);
-                increace.SetActive(true);
+                Image.sprite = sprite[1];
             }
             else
             {
-                heal.SetActive(true);
-                barrier.SetActive(false);
-                increace.SetActive(false);
+                Image.sprite = sprite[2];
             }
         }
     }

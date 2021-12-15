@@ -10,9 +10,7 @@ public class Laser : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        //勝手に動かすためのプログラム、後ほど消します
-        //rb.velocity = new Vector2(0, 6);
+        StartCoroutine(IsTrigger());
     }
 
     void FixedUpdate()
@@ -30,6 +28,8 @@ public class Laser : MonoBehaviour
         {
             //敵にダメージを与える処理
             Debug.Log("敵にダメージを与えた！");
+            Destroy(gameObject);
+
         }
         else if (collision.gameObject.tag == "Laser")
         {
@@ -49,7 +49,13 @@ public class Laser : MonoBehaviour
     {
         Vector2 refrectVec = Vector2.Reflect(this.lastVelocity, collision.contacts[0].normal);
         this.rb.velocity = refrectVec;
-        //三秒後に消す
-        //Destroy(gameObject, 3.0f);
+        Destroy(gameObject, 3.0f);
+    }
+
+    private IEnumerator IsTrigger()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        GetComponent<CircleCollider2D>().isTrigger = false;
     }
 }
