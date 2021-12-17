@@ -14,8 +14,8 @@ public class ReflectCount : MonoBehaviour
     private int countCcMirror;
 
     //‘Ï‹v—Í
-    private int mirrorBreakNum = 10;
-    private int cvMirrorBreakNum = 5;
+    private int mirrorBreakNum = 50;
+    private int cvMirrorBreakNum = 10;
     private int ccMirrorBreakNum = 10;
 
 

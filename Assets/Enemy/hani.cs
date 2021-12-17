@@ -25,7 +25,15 @@ public class hani : MonoBehaviour
         {
             idou();
         }
-        LookAt2D();
+        //LookAt2D();
+    }
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Laser")
+        {
+            Destroy(gameObject);
+            Debug.Log("当たった！");
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -80,12 +88,12 @@ public class hani : MonoBehaviour
         ha = true;
     }
 
-    void LookAt2D()
-    {
-        Vector3 distance = player.transform.position - this.transform.position; //敵とプレイヤーの位置の差を取る
-        float angle = Mathf.Atan2(distance.x, distance.y) * Mathf.Rad2Deg; //Mathf.Atan2は
-        transform.eulerAngles = new Vector3(0, 0, -(angle-90));
-    }
+    //void LookAt2D()
+    //{
+    //    Vector3 distance = player.transform.position - this.transform.position; //敵とプレイヤーの位置の差を取る
+    //    float angle = Mathf.Atan2(distance.x, distance.y) * Mathf.Rad2Deg; //Mathf.Atan2は
+    //    transform.eulerAngles = new Vector3(0, 0, -(angle-90));
+    //}
 
     void idou()
     {
