@@ -594,8 +594,8 @@ GameObject:
   - component: {fileID: 333553654}
   - component: {fileID: 333553653}
   m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_Name: Lava2
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,12 +633,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333553652}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: 1.21, z: 0}
-  m_LocalScale: {x: 2.25, y: 1.1875, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.8684063, y: 2.4974823, z: 0}
+  m_LocalScale: {x: 3.9524078, y: 2.4510415, z: 2.064035}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1072449441}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354760316
 GameObject:
@@ -942,7 +942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459246549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.0988894, y: 0, z: 0}
+  m_LocalPosition: {x: 5.096076, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1297862539}
@@ -1264,12 +1264,69 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1111107, y: 0, z: -10}
+  m_LocalPosition: {x: 1.113924, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459246551}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &576282411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576282413}
+  - component: {fileID: 576282412}
+  m_Layer: 0
+  m_Name: Lava3
+  m_TagString: Lava
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &576282412
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576282411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &576282413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576282411}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.8684063, y: -2.2848866, z: 0}
+  m_LocalScale: {x: 3.9524078, y: 2.7344432, z: 2.064035}
+  m_Children: []
+  m_Father: {fileID: 1072449441}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639758808
 GameObject:
@@ -1750,7 +1807,7 @@ RectTransform:
   - {fileID: 1897815722}
   - {fileID: 1455547938}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1768,8 +1825,8 @@ GameObject:
   - component: {fileID: 956063620}
   - component: {fileID: 956063619}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Lava1
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1807,12 +1864,69 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956063618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: 4.04, z: 0}
-  m_LocalScale: {x: 2.2625, y: 3.4125, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.8684063, y: 8.338701, z: 0}
+  m_LocalScale: {x: 3.9743657, y: 7.043519, z: 2.064035}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1072449441}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1042122260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042122262}
+  - component: {fileID: 1042122261}
+  m_Layer: 0
+  m_Name: Lava4
+  m_TagString: Lava
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1042122261
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042122260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1042122262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042122260}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.8684063, y: -8.338701, z: 0}
+  m_LocalScale: {x: 3.9524078, y: 7.2462745, z: 2.064035}
+  m_Children: []
+  m_Father: {fileID: 1072449441}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1066440895
 PrefabInstance:
@@ -1823,7 +1937,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1787179436784021013, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1787179436784021013, guid: db4586be90fa69847811447fb2faa4b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1960,8 +2074,12 @@ Transform:
   - {fileID: 1794755387}
   - {fileID: 2089659624}
   - {fileID: 1127607276}
+  - {fileID: 956063620}
+  - {fileID: 333553654}
+  - {fileID: 576282413}
+  - {fileID: 1042122262}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1113864048
 GameObject:
@@ -2284,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950700289786972847, guid: 020d19085986a95498165c4f33922837, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3950700289786972847, guid: 020d19085986a95498165c4f33922837, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2716,7 +2834,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717577964 stripped
 GameObject:
@@ -3170,6 +3288,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 675327563822705294, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2062945562}
+    - target: {fileID: 675327563822705294, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
       propertyPath: hpSlider
       value: 
       objectReference: {fileID: 4073236}
@@ -3192,6 +3314,10 @@ PrefabInstance:
     - target: {fileID: 7599136663642768902, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
       propertyPath: speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599136663642768902, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
+      propertyPath: isDamage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7821580715948155782, guid: 555c8956c39489a4e9e51869ea21e2d6, type: 3}
       propertyPath: eneBar

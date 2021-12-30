@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HpBar : MonoBehaviour
 {
     [Header("HP‚ÌSlider")] public Slider hpSlider;
+    public PlayerController player;
+
 
     /// <summary>
     /// Å‘åHP
@@ -37,6 +39,7 @@ public class HpBar : MonoBehaviour
 
             //Å‘åHP‚É‚¨‚¯‚éŒ»İ‚ÌHP‚ğSlider‚É”½‰fB
             hpSlider.value = (float)currentHp / (float)maxHp; ;
+            player.isDamage = true;
         }
     }
 

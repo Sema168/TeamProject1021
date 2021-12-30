@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     private int count = 0;
     private int mirrorNum = 0;
 
+    public bool isDamage = false;
+    private float continueTime = 0.0f;
+    private float blinkTime = 0.0f;
+    private SpriteRenderer sr = null;
+
     //鏡の所持数
     private int stock;
     private int maxStock = 3;
@@ -22,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
     
@@ -35,6 +41,8 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = rotation;
 
         MirrorChenge();
+
+        Flashing();
     }
 
     void FixedUpdate()
@@ -105,6 +113,44 @@ public class PlayerController : MonoBehaviour
                 convexMirror.SetActive(false);
                 concaveMirror.SetActive(true);
             }
+        }
+    }
+
+    public void Flashing()
+    {
+        if (isDamage)
+        {
+            //明滅　ついている時に戻る
+            if (blinkTime > 0.2f)
+            {
+                sr.enabled = true;
+                blinkTime = 0.0f;
+            }
+            //明滅　消えているとき
+            else if (blinkTime > 0.1f)
+            {
+                sr.enabled = false;
+            }
+            //明滅　ついているとき
+            else
+            {
+                sr.enabled = true;
+            }
+
+            //1秒たったら明滅終わり
+            if (continueTime > 1.0f)
+            {
+                isDamage = false;
+                blinkTime = 0f;
+                continueTime = 0f;
+                sr.enabled = true;
+            }
+            else
+            {
+                blinkTime += Time.deltaTime;
+                continueTime += Time.deltaTime;
+            }
+
         }
     }
 }

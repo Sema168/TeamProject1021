@@ -12,6 +12,8 @@ TagManager:
   - ConvexMirror
   - Enemy
   - ConcavaMirror
+  - FxTemporaire
+  - Lava
   layers:
   - Default
   - TransparentFX
