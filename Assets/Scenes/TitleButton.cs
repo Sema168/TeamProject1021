@@ -7,6 +7,6 @@ public class TitleButton : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameSceneTsuyuki");
     }
 }
