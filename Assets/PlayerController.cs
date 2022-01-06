@@ -144,11 +144,13 @@ public class PlayerController : MonoBehaviour
                 blinkTime = 0f;
                 continueTime = 0f;
                 sr.enabled = true;
+                GetComponent<CircleCollider2D>().isTrigger = false;
             }
             else
             {
                 blinkTime += Time.deltaTime;
                 continueTime += Time.deltaTime;
+                GetComponent<CircleCollider2D>().isTrigger = true;
             }
 
         }

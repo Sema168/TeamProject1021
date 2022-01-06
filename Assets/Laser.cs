@@ -26,10 +26,7 @@ public class Laser : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            //敵にダメージを与える処理
-            Debug.Log("敵にダメージを与えた！");
             Destroy(gameObject);
-
         }
         else if (collision.gameObject.tag == "Laser")
         {
