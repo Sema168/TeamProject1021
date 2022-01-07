@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
                 mirrorStock++;
             }
             Destroy(collision.gameObject);
-            Debug.Log("mirrorStock : " + mirrorStock) ;
         }
         else if (collision.tag == "ItemConvexMirror")
         {
@@ -73,7 +72,6 @@ public class PlayerController : MonoBehaviour
                 convexMirrorStock++;
             }
             Destroy(collision.gameObject);
-            Debug.Log("canvexMirrorStock : " + convexMirrorStock) ;
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
@@ -82,7 +80,6 @@ public class PlayerController : MonoBehaviour
                 concaveMirrorStock++;
             }
             Destroy(collision.gameObject);
-            Debug.Log("concaveMirrorStock : " + concaveMirrorStock) ;
         }
     }
 

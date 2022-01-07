@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    public int score;
     private Vector2 lastVelocity;
     private Rigidbody2D rb;
 
@@ -26,7 +27,7 @@ public class Laser : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Laser")
         {

@@ -136,8 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c853a394cd02c4d9933f3ea20b5ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 9082891353092623663, guid: b6042dc6b64b1634ca424d373a5e6372, type: 3}
-  isHit: 0
+  score: {fileID: 5881784865455020344, guid: 0c6249353548aa24ea8aa82ae7311df8, type: 3}
 --- !u!96 &7581145575324428880
 TrailRenderer:
   serializedVersion: 2
