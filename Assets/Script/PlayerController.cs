@@ -7,16 +7,18 @@ public class PlayerController : MonoBehaviour
     [Header("鏡")] public GameObject mirror;
     [Header("凸面鏡")] public GameObject convexMirror;
     [Header("凹面鏡")] public GameObject concaveMirror;
+    [Header("バリア")] public GameObject barrire;
     [Header("移動速度")] public float speed;
 
     private Rigidbody2D rb;
     private int count = 0;
     private int mirrorNum = 0;
 
-    public bool isDamage = false;
+    [System.NonSerialized] public bool isDamage = false;
     private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
     private SpriteRenderer sr = null;
+
 
     //鏡の所持数
     private int stock;
@@ -33,6 +35,11 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         stock = mirrorStock + concaveMirrorStock + convexMirrorStock;
 
         //マウスの方を向く処理
@@ -40,9 +47,15 @@ public class PlayerController : MonoBehaviour
         var rotation = Quaternion.LookRotation(Vector3.forward, Input.mousePosition - pos);
         transform.localRotation = rotation;
 
-        MirrorChenge();
+        if (Input.GetKeyDown("space"))
+        {
+            MirrorChenge();
+        }
 
-        Flashing();
+        if (isDamage)
+        {
+            Flashing();
+        }
     }
 
     void FixedUpdate()
@@ -88,68 +101,61 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void MirrorChenge()
     {
-        if (Input.GetKeyDown("space"))
+        count++;
+        mirrorNum = count % 3;
+        if (mirrorNum == 1 && mirrorStock > 0)
         {
-            count++;
-            mirrorNum = count % 3;
-            if (mirrorNum == 1 && mirrorStock > 0)
-            {
-                mirror.SetActive(true);
-                convexMirror.SetActive(false);
-                concaveMirror.SetActive(false);
-            }
-            else if (mirrorNum == 2 && convexMirrorStock > 0)
-            {
-                mirror.SetActive(false);
-                convexMirror.SetActive(true);
-                concaveMirror.SetActive(false);
-            }
-            else if (mirrorNum == 0 && concaveMirrorStock > 0)
-            {
-                mirror.SetActive(false);
-                convexMirror.SetActive(false);
-                concaveMirror.SetActive(true);
-            }
+            mirror.SetActive(true);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(false);
+        }
+        else if (mirrorNum == 2 && convexMirrorStock > 0)
+        {
+            mirror.SetActive(false);
+            convexMirror.SetActive(true);
+            concaveMirror.SetActive(false);
+        }
+        else if (mirrorNum == 0 && concaveMirrorStock > 0)
+        {
+            mirror.SetActive(false);
+            convexMirror.SetActive(false);
+            concaveMirror.SetActive(true);
         }
     }
 
-    public void Flashing()
+    void Flashing()
     {
-        if (isDamage)
+        //明滅　ついている時に戻る
+        if (blinkTime > 0.2f)
         {
-            //明滅　ついている時に戻る
-            if (blinkTime > 0.2f)
-            {
-                sr.enabled = true;
-                blinkTime = 0.0f;
-            }
-            //明滅　消えているとき
-            else if (blinkTime > 0.1f)
-            {
-                sr.enabled = false;
-            }
-            //明滅　ついているとき
-            else
-            {
-                sr.enabled = true;
-            }
+            sr.enabled = true;
+            blinkTime = 0.0f;
+        }
+        //明滅　消えているとき
+        else if (blinkTime > 0.1f)
+        {
+            sr.enabled = false;
+        }
+        //明滅　ついているとき
+        else
+        {
+            sr.enabled = true;
+        }
 
-            //1秒たったら明滅終わり
-            if (continueTime > 1.0f)
-            {
-                isDamage = false;
-                blinkTime = 0f;
-                continueTime = 0f;
-                sr.enabled = true;
-                GetComponent<CircleCollider2D>().isTrigger = false;
-            }
-            else
-            {
-                blinkTime += Time.deltaTime;
-                continueTime += Time.deltaTime;
-                GetComponent<CircleCollider2D>().isTrigger = true;
-            }
-
+        //1秒たったら明滅終わり
+        if (continueTime > 1.5f)
+        {
+            isDamage = false;
+            blinkTime = 0f;
+            continueTime = 0f;
+            sr.enabled = true;
+            barrire.SetActive(false);
+        }
+        else
+        {
+            blinkTime += Time.deltaTime;
+            continueTime += Time.deltaTime;
+            barrire.SetActive(true);
         }
     }
 }

@@ -17,6 +17,10 @@ public class UI : MonoBehaviour
 
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             count++;
