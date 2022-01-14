@@ -31,6 +31,8 @@ public class hani : MonoBehaviour
     {
         if (col.gameObject.tag == "Laser")
         {
+            Score.score += 100;
+
             Destroy(gameObject);
             Debug.Log("ìñÇΩÇ¡ÇΩÅI");
         }

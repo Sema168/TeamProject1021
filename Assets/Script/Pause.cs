@@ -32,9 +32,5 @@ public class Pause : MonoBehaviour
 	public void PushButton()
 	{
 		isPush = true;
-	}
-	////if (Mathf.Approximately(Time.timeScale, 0f))
- //       //{
- //           return;
- //       }
+    }
 }

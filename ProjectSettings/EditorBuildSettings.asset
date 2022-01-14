@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 40949be32b8a63b46bba7724071a030d
+  - enabled: 1
     path: Assets/Scenes/GameSceneTsuyuki.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 8cef26870a5af1b4e9e611ccd19a0c85
   m_configObjects: {}

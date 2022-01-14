@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour
     [Header("凸面鏡")] public GameObject convexMirror;
     [Header("凹面鏡")] public GameObject concaveMirror;
     [Header("移動速度")] public float speed;
+    [Header("バリア")] public GameObject barrier;
 
     private Rigidbody2D rb;
     private int count = 0;
     private int mirrorNum = 0;
 
-    public bool isDamage = false;
+    [System.NonSerialized] public bool isDamage = false;
     private float continueTime = 0.0f;
     private float blinkTime = 0.0f;
     private SpriteRenderer sr = null;
@@ -33,6 +34,11 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         stock = mirrorStock + concaveMirrorStock + convexMirrorStock;
 
         //マウスの方を向く処理
@@ -141,13 +147,13 @@ public class PlayerController : MonoBehaviour
                 blinkTime = 0f;
                 continueTime = 0f;
                 sr.enabled = true;
-                GetComponent<CircleCollider2D>().isTrigger = false;
+                barrier.SetActive(false);
             }
             else
             {
                 blinkTime += Time.deltaTime;
                 continueTime += Time.deltaTime;
-                GetComponent<CircleCollider2D>().isTrigger = true;
+                barrier.SetActive(true);
             }
 
         }

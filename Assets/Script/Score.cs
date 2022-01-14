@@ -5,14 +5,34 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    [Header("レーザースクリプト")] public Laser laser;
-    [System.NonSerialized] public int score;
+    [SerializeField] public static int score;
     public Text scoreText;
 
     void Update()
     {
-        Text scoreText = GameObject.Find("Score").GetComponent<Text>();
+        Text scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
 
-        scoreText.text = score.ToString();
+
+        if (score == 0)
+        {
+            scoreText.text = "00000" + score;
+        }
+        else if (0 < score && score < 1000) 
+        {
+            scoreText.text = "000" + score;
+        }
+        else if (1000 <= score && score < 10000)
+        {
+            scoreText.text = "00" + score;
+        }
+        else if (10000 <= score && score < 100000)
+        {
+            scoreText.text = "0" + score;
+        }
+        else
+        {
+            scoreText.text = "" + score;
+        }
+
     }
 }

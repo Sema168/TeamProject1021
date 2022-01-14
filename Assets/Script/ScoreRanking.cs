@@ -10,10 +10,9 @@ public class ScoreRanking : MonoBehaviour
     int[] rankingScore = new int[5];
     [SerializeField, Header("表示させるテキスト")]
     Text[] rankingText = new Text[5];
-    //Text[] rankingName = new Text[5];
     void Start()
     {
-        //point = score.tensu;
+        point = Score.score;
         GetRanking();
         SetRanking(point);
         for (int i = 0; i < rankingText.Length; i++)
