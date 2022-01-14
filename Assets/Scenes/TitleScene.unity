@@ -511,7 +511,6 @@ GameObject:
   - component: {fileID: 1030226108}
   - component: {fileID: 1030226107}
   - component: {fileID: 1030226106}
-  - component: {fileID: 1030226105}
   - component: {fileID: 1030226109}
   m_Layer: 5
   m_Name: QuitButton
@@ -539,18 +538,6 @@ RectTransform:
   m_AnchoredPosition: {x: -191.3, y: -113.08}
   m_SizeDelta: {x: 170.3, y: 64.1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1030226105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030226103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae6fec62c4af3249a94600de93476dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1030226106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,9 +582,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1030226105}
+      - m_Target: {fileID: 1030226103}
         m_TargetAssemblyTypeName: TitleButton, Assembly-CSharp
-        m_MethodName: OnClickStartButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
