@@ -7,6 +7,7 @@ public class HpBar : MonoBehaviour
 {
     [Header("HPÇÃSlider")] public Slider hpSlider;
     public PlayerController player;
+    public GameOver gameOver;
 
 
     /// <summary>
@@ -25,6 +26,13 @@ public class HpBar : MonoBehaviour
         hpSlider.value = 1;
         //åªç›ÇÃHPÇç≈ëÂHPÇ∆ìØÇ∂Ç…ÅB
         currentHp = maxHp;
+    }
+    void Update()
+    {
+        if (hpSlider.value <= 0)
+        {
+            gameOver.GOver();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

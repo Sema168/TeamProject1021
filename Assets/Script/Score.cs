@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     [SerializeField] public static int score;
+    private int maxScore = 999999;
     public Text scoreText;
 
     void Update()
@@ -29,10 +30,13 @@ public class Score : MonoBehaviour
         {
             scoreText.text = "0" + score;
         }
-        else
+        else if (100000 <= score && score < 1000000)
         {
             scoreText.text = "" + score;
         }
-
+        else
+        {
+            scoreText.text = "" + maxScore;
+        }
     }
 }
