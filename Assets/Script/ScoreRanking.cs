@@ -5,24 +5,39 @@ using UnityEngine.UI;
 
 public class ScoreRanking : MonoBehaviour
 {
-    int point;
-    string[] ranking = { "1位", "2位", "3位", "4位", "5位" };
-    int[] rankingScore = new int[5];
+    private int point;
+    private string[] ranking = { "1位", "2位", "3位"};
+    private int[] rankingScore = new int[3];
+    public GameOver gameOver;
+    [SerializeField]
+    private GameObject rankingUI;
     [SerializeField, Header("表示させるテキスト")]
-    Text[] rankingText = new Text[5];
+    private Text[] rankingText = new Text[3];
+    private int isOnece = 0;
     void Start()
     {
-        point = Score.score;
-        GetRanking();
-        SetRanking(point);
-        for (int i = 0; i < rankingText.Length; i++)
-        {
-            rankingText[i].text = rankingScore[i].ToString();
-        }
+        //point = Score.score;
+        //GetRanking();
+        //SetRanking(point);
+        //for (int i = 0; i < rankingText.Length; i++)
+        //{
+        //    rankingText[i].text = rankingScore[i].ToString();
+        //}
     }
     void Update()
     {
+        if (rankingUI.activeSelf && isOnece == 0)
+        {
+            isOnece++;
+            point = Score.score;
+            GetRanking();
+            SetRanking(point);
+            for (int i = 0; i < rankingText.Length; i++)
+            {
+                rankingText[i].text = rankingScore[i].ToString();
+            }
 
+        }
     }
     void GetRanking()
     {
