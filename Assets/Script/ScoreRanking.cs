@@ -8,7 +8,6 @@ public class ScoreRanking : MonoBehaviour
     private int point;
     private string[] ranking = { "1位", "2位", "3位"};
     private int[] rankingScore = new int[3];
-    public GameOver gameOver;
     [SerializeField]
     private GameObject rankingUI;
     [SerializeField, Header("表示させるテキスト")]
@@ -36,7 +35,10 @@ public class ScoreRanking : MonoBehaviour
             {
                 rankingText[i].text = rankingScore[i].ToString();
             }
-
+        }
+        else if (!rankingUI.activeSelf && isOnece == 1)
+        {
+            isOnece--;
         }
     }
     void GetRanking()
