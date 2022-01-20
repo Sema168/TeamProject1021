@@ -32,9 +32,7 @@ public class hani : MonoBehaviour
         if (col.gameObject.tag == "Laser")
         {
             Score.score += 100;
-
             Destroy(gameObject);
-            Debug.Log("ìñÇΩÇ¡ÇΩÅI");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

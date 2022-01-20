@@ -8,11 +8,8 @@ public class ConvexMirror : MonoBehaviour
     /// <summary>
     /// 弾の速さ
     /// </summary>
-    float  fowerdSpeed = 6.0f;
-    /// <summary>
-    /// 斜めの速さの計算に使う値(ルート２)
-    /// </summary>
-    float root = Mathf.Sign(2);
+    private float  fowerdSpeed = 6.0f;
+    private float sideSpeed;
     /// <summary>
     /// 反射後に消える時間
     /// </summary>
@@ -38,16 +35,16 @@ public class ConvexMirror : MonoBehaviour
             if (timeleft <= 0.0)
             {
                 timeleft = 0.2f;
-                //斜めに反射する弾の縦と横のベクトルの値
-                float sideSpeed = fowerdSpeed / root;
+                //斜めに反射する弾の横のベクトルの値
+                sideSpeed = fowerdSpeed / 2;
 
                 //弾を三発に拡散する(このスクリプトを簡略化したい)
                 GameObject newLaser = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser.GetComponent<CircleCollider2D>().isTrigger = true;
-                newLaser.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(sideSpeed , sideSpeed ));
+                newLaser.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(sideSpeed , fowerdSpeed  ));
                 GameObject newLaser2 = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser2.GetComponent<CircleCollider2D>().isTrigger = true;
-                newLaser2.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(-sideSpeed , sideSpeed ));
+                newLaser2.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(-sideSpeed , fowerdSpeed  ));
                 GameObject newLaser3 = Instantiate(laserPrefab, collision.transform.position, collision.transform.rotation);
                 newLaser3.GetComponent<CircleCollider2D>().isTrigger = true;
                 newLaser3.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(new Vector2(0, fowerdSpeed ));

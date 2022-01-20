@@ -5,6 +5,9 @@ using UnityEngine;
 public class Barrier : MonoBehaviour
 {
     [Header("バリア")] public GameObject barrier;
+    /// <summary>
+    /// バリアの持続時間
+    /// </summary>
     private float barrierTime = 10.0f;
 
     public void BarrierSkill()

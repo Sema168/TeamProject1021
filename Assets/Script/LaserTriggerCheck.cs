@@ -20,6 +20,13 @@ public class LaserTriggerCheck : MonoBehaviour
             root.GetComponent<CircleCollider2D>().isTrigger = true;
         }
     }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Laser" || collision.tag == "Lava")
+        {
+            root.GetComponent<CircleCollider2D>().isTrigger = true;
+        }
+    }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Laser" || collision.tag == "Lava")

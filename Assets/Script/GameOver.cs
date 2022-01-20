@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject gameOverText;
-    [SerializeField]
-    private GameObject rankingUI;
-    [SerializeField]
-    private GameObject panel;
-    public bool isGameOver = false;
+    [SerializeField]Å@private GameObject gameOverText;
+    [SerializeField]Å@private GameObject rankingUI;
+    [SerializeField]Å@private GameObject panel;
+    [System.NonSerialized] public bool isGameOver = false;
 
     void Start()
     {

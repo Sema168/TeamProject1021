@@ -46,6 +46,8 @@ public class Pause : MonoBehaviour
 	public void OnClicExitButton()
 	{
 		SceneManager.LoadScene("TitleScene");
+		Time.timeScale = 1f;
+		Score.score = 0;
 	}
 
 }

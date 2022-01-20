@@ -20,21 +20,20 @@ public class EneBar : MonoBehaviour
     /// <summary>
     /// エネルギーの消費量
     /// </summary>
-    private float  cost;
+    private float[] cost= { 50, 30, 40 };//{回復,バリア,分身}
     /// <summary>
     /// エネルギーの回復量
     /// </summary>
     private float eneHeal= 5.0f;
 
-    int count = 0;
-    int skillNum;
+
+    private int count = 0;
+    private int skillNum;
 
 
     void Start()
     {
-        //Sliderを満タンにする。
         eneSlider.value = 1;
-        //現在のエネルギーを最大エネルギーと同じに。
         currentEne = maxEne;
     }
 
@@ -55,21 +54,16 @@ public class EneBar : MonoBehaviour
         {
             if (skillNum == 1)
             {
-                cost = 30.0f;
-
                 //エネルギーが消費量分残っているとき
-                if (eneSlider.value >= cost / maxEne)
+                if (eneSlider.value >= cost[skillNum ] / maxEne)
                 {
                     EneSliderControll();
                     barrier.BarrierSkill();
-                    Debug.Log("バリア発動！");
                 }
             }
             else if (skillNum == 2)
             {
-                cost = 40.0f;
-
-                if (eneSlider.value >= cost / maxEne)
+                if (eneSlider.value >= cost[skillNum] / maxEne)
                 {
                     EneSliderControll();
                     Debug.Log("分身発動！");
@@ -77,16 +71,13 @@ public class EneBar : MonoBehaviour
             }
             else
             {
-                cost = 50.0f;
-
                 //HPが満タンでない時
                 if (hpBar.hpSlider.value != 1)
                 {
-                    if (eneSlider.value >= cost / maxEne)
+                    if (eneSlider.value >= cost[skillNum] / maxEne)
                     {
                         EneSliderControll();
                         hpBar.Heal();
-                        Debug.Log("回復発動！");
                     }
                 }
             }
@@ -99,7 +90,7 @@ public class EneBar : MonoBehaviour
     void EneSliderControll()
     {
         //現在のエネルギーから消費量を引く
-        currentEne = currentEne - cost;
+        currentEne = currentEne - cost[skillNum];
 
         //最大エネルギーにおける現在のエネルギーをSliderに反映。
         eneSlider.value = currentEne / maxEne;

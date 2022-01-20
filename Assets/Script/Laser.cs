@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    public int score;
     private Vector2 lastVelocity;
     private Rigidbody2D rb;
+    private bool onTrigger = false;
 
     void Start()
     {
@@ -24,14 +24,6 @@ public class Laser : MonoBehaviour
         if (collision.gameObject.tag == "Mirror")
         {
             Reflect(collision);
-        }
-        else if (collision.gameObject.tag == "Enemy")
-        {
-            //Destroy(gameObject);
-        }
-        else if (collision.gameObject.tag == "Laser")
-        {
-            //DestroyëŒçÙ
         }
         else
         {
@@ -53,7 +45,13 @@ public class Laser : MonoBehaviour
     private IEnumerator IsTrigger()
     {
         yield return new WaitForSeconds(0.2f);
-
-        GetComponent<CircleCollider2D>().isTrigger = false;
+        GetComponent<CircleCollider2D>().isTrigger = onTrigger ;
+    }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Laser" || collision.tag == "Lava")
+        {
+            onTrigger = true;
+        }
     }
 }

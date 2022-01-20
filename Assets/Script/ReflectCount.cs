@@ -24,15 +24,15 @@ public class ReflectCount : MonoBehaviour
     {
         if (collision .gameObject .tag == "Laser")
         {
-            if (mirror.activeSelf == true)
+            if (mirror.activeSelf)
             {
                 countMirror++;
             }
-            else if (convexMirror.activeSelf == true)
+            else if (convexMirror.activeSelf )
             {
                 countCvMirror++;
             }
-            else if (concaveMirror.activeSelf == true)
+            else if (concaveMirror.activeSelf)
             {
                 countCcMirror++;
             }
@@ -46,21 +46,18 @@ public class ReflectCount : MonoBehaviour
             mirror.SetActive(false);
             player.mirrorStock--;
             countMirror = 0;
-            Debug.Log("mirrorStock : "+ player.mirrorStock);
         }
         if (countCvMirror >= cvMirrorBreakNum)
         {
             convexMirror.SetActive(false);
             player.convexMirrorStock--;
             countCvMirror = 0;
-            Debug.Log("convexMirrorStock : "+ player.convexMirrorStock);
         }
         if (countCcMirror >= ccMirrorBreakNum)
         {
             concaveMirror.SetActive(false);
             player.concaveMirrorStock--;
             countCcMirror = 0;
-            Debug.Log("concaveMirrorStock : "+ player.concaveMirrorStock);
         }
     }
 }
