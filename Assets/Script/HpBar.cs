@@ -18,6 +18,7 @@ public class HpBar : MonoBehaviour
     /// 現在のHP
     /// </summary>
     private int currentHp;
+    private int damage = 20;
 
 
     void Start()
@@ -39,9 +40,6 @@ public class HpBar : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Laser")
         {
-            //ダメージ数
-            int damage = 20;
-
             //現在のHPからダメージを引く
             currentHp = currentHp - damage;
 

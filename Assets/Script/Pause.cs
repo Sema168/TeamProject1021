@@ -43,11 +43,20 @@ public class Pause : MonoBehaviour
 		isPush = true;
     }
 
+	public void RestartButton()
+    {
+		SceneManager.LoadScene("GameSceneTsuyuki");
+		Time.timeScale = 1f;
+		Score.score = 0;
+		gameOver.isGameOver = false;
+	}
+
 	public void OnClicExitButton()
 	{
 		SceneManager.LoadScene("TitleScene");
 		Time.timeScale = 1f;
 		Score.score = 0;
+		gameOver.isGameOver = false;
 	}
 
 }

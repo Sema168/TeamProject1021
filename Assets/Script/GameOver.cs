@@ -19,6 +19,7 @@ public class GameOver : MonoBehaviour
     {
         if (isGameOver)
         {
+            Time.timeScale = 0f;
             if (Input.GetMouseButtonDown(0))
             {
                 gameOverText.SetActive(false);
@@ -30,7 +31,6 @@ public class GameOver : MonoBehaviour
     public void GOver()
     {
         isGameOver = true;
-        Time.timeScale = 0f;
         gameOverText.SetActive(true);
         panel.SetActive(true);
     }

@@ -14,6 +14,7 @@ TagManager:
   - ConcavaMirror
   - FxTemporaire
   - Lava
+  - syo
   layers:
   - Default
   - TransparentFX

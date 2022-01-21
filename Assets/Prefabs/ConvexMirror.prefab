@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4603933778203810250}
   - component: {fileID: 898648996075539756}
-  - component: {fileID: 1348218688006802663}
   - component: {fileID: 1430418672024184876}
   - component: {fileID: -5306578772760127224}
-  - component: {fileID: -8457754173193373612}
+  - component: {fileID: 5166702834169964112}
   m_Layer: 0
   m_Name: ConvexMirror
   m_TagString: ConcavaMirror
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4968271980703068960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e94d0eaa1eef4bb48ac85c02cf7c089b, type: 3}
+  m_Color: {r: 1, g: 0.7028302, b: 0.9749375, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1348218688006802663
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4968271980703068960}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
 --- !u!50 &1430418672024184876
 Rigidbody2D:
   serializedVersion: 4
@@ -136,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 2208831388216788466, guid: 5a77f5cc8aea640429e738356bac5ffb, type: 3}
---- !u!61 &-8457754173193373612
-BoxCollider2D:
+--- !u!60 &5166702834169964112
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,12 +136,32 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.62, y: 0.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.24, y: -0.11}
+      - {x: 0.41, y: -0.02}
+      - {x: 0.78, y: -0.02}
+      - {x: 0.79999995, y: 0}
+      - {x: 0.78999996, y: 0.03}
+      - {x: 0.61, y: 0.08}
+      - {x: 0.19999999, y: 0.14999999}
+      - {x: -0.02, y: 0.14999999}
+      - {x: -0.35, y: 0.08}
+      - {x: -0.57, y: 0.04}
+      - {x: -0.61, y: 0}
+      - {x: -0.59999996, y: -0.04}
+      - {x: -0.38, y: -0.03}
+      - {x: -0.17, y: 0}
+      - {x: -0.14999999, y: -0.089999996}
+      - {x: -0.11, y: -0.14}
+      - {x: -0.08, y: -0.14}
+      - {x: -0.06, y: -0.13}
+      - {x: -0.06, y: -0.07}
+      - {x: 0.02, y: -0.14}
+      - {x: 0.14, y: -0.14}
