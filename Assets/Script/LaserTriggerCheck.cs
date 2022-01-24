@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class LaserTriggerCheck : MonoBehaviour
 {
-   　private GameObject root;
+    /// <summary>
+    /// レーザー(親オブジェクト)
+    /// </summary>
+    private GameObject root;
 
     void Start()
     {

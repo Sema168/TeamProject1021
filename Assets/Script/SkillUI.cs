@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class SkillUI : MonoBehaviour
 {
-    public Image Image;
-    public Sprite[] sprite;
+    [SerializeField, Header("•\Ž¦‚³‚¹‚éImage")]
+    private Image Image;
+    [SerializeField, Header("•\Ž¦‚³‚¹‚é‰æ‘œ")]
+    private Sprite[] sprite;
     private int count = 0;
     private int skillNum;
 

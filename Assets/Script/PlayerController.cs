@@ -14,17 +14,18 @@ public class PlayerController : MonoBehaviour
     private int count = 0;
     private int mirrorNum = 0;
 
+    //ダメージ後の点滅の変数
     [System.NonSerialized] public bool isDamage = false;
     private float damageTime = 0.0f;
     private float blinkTime = 0.0f;
     private SpriteRenderer sr = null;
 
     //鏡の所持数
-    private int stock;
+    private int currentStock;
     private int maxStock = 3;
-    [System.NonSerialized] public int mirrorStock;
-    [System.NonSerialized] public int convexMirrorStock;
-    [System.NonSerialized] public int concaveMirrorStock;
+    [System.NonSerialized] public int mirrorStock = 1;
+    [System.NonSerialized] public int convexMirrorStock = 1;
+    [System.NonSerialized] public int concaveMirrorStock = 1;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        stock = mirrorStock + concaveMirrorStock + convexMirrorStock;
+        currentStock = mirrorStock + concaveMirrorStock + convexMirrorStock;
 
         //マウスの方を向く処理
         var pos = Camera.main.WorldToScreenPoint(transform.localPosition);
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
         //鏡を取った時、その鏡をストックする
         if (collision.tag == "ItemMirror")
         {
-            if (stock < maxStock)
+            if (currentStock < maxStock)
             {
                 mirrorStock++;
             }
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag == "ItemConvexMirror")
         {
-            if (stock < maxStock)
+            if (currentStock < maxStock)
             {
                 convexMirrorStock++;
             }
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag == "ItemConcaveMirror")
         {
-            if (stock < maxStock)
+            if (currentStock < maxStock)
             {
                 concaveMirrorStock++;
             }
@@ -124,24 +125,20 @@ public class PlayerController : MonoBehaviour
 
     public void Flashing()
     {
-        //明滅　ついている時に戻る
         if (blinkTime > 0.2f)
         {
             sr.enabled = true;
             blinkTime = 0.0f;
         }
-        //明滅　消えているとき
         else if (blinkTime > 0.1f)
         {
             sr.enabled = false;
         }
-        //明滅　ついているとき
         else
         {
             sr.enabled = true;
         }
 
-        //1秒たったら明滅終わり
         if (damageTime > 1.0f)
         {
             isDamage = false;

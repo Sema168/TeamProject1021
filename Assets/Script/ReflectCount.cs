@@ -9,16 +9,15 @@ public class ReflectCount : MonoBehaviour
     [Header("“Ê–Ê‹¾")] public GameObject convexMirror;
     [Header("‰š–Ê‹¾")] public GameObject concaveMirror;
 
+    //”½Ë‚µ‚½‰ñ”
     private int countMirror;
     private int countCvMirror;
     private int countCcMirror;
 
     //‘Ï‹v—Í
-    private int mirrorBreakNum = 50;
+    private int mirrorBreakNum = 15;
     private int cvMirrorBreakNum = 10;
     private int ccMirrorBreakNum = 10;
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

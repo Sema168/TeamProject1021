@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-	[SerializeField]
-	private GameObject pauseUI;
-	[SerializeField]
-	private GameObject panel;
-	private bool isPush = false;
+	[Header("ゲームオーバースクリプト")]
 	public GameOver gameOver;
+	[SerializeField, Header("ポーズ画面")]
+	private GameObject pauseUI;
+	[SerializeField]private GameObject panel;
+	private bool isPush = false;
 
     void Start()
     {
@@ -37,20 +37,28 @@ public class Pause : MonoBehaviour
 			}
 		}
 	}
-
-	public void PushButton()
-	{
-		isPush = true;
-    }
-
+	
+	/// <summary>
+	/// Restartを押す
+	/// </summary>
 	public void RestartButton()
     {
-		SceneManager.LoadScene("GameSceneTsuyuki");
-		Time.timeScale = 1f;
-		Score.score = 0;
-		gameOver.isGameOver = false;
+        if (gameOver.isGameOver)
+        {
+			SceneManager.LoadScene("GameSceneTsuyuki");
+			Time.timeScale = 1f;
+			Score.score = 0;
+			gameOver.isGameOver = false;
+		}
+        else
+        {
+			isPush = true;
+		}
 	}
 
+	/// <summary>
+	/// Exitを押す
+	/// </summary>
 	public void OnClicExitButton()
 	{
 		SceneManager.LoadScene("TitleScene");
@@ -58,5 +66,4 @@ public class Pause : MonoBehaviour
 		Score.score = 0;
 		gameOver.isGameOver = false;
 	}
-
 }

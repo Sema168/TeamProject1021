@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ScoreRanking : MonoBehaviour
 {
-    private int point;
-    private string[] ranking = { "1位", "2位", "3位"};
-    private int[] rankingScore = new int[3];
-    [SerializeField]
+    [SerializeField, Header("ランキング")]
     private GameObject rankingUI;
     [SerializeField, Header("表示させるテキスト")]
     private Text[] rankingText = new Text[3];
+    private int point;
+    private string[] ranking = { "1位", "2位", "3位"};
+    private int[] rankingScore = new int[3];
     private int isOnce = 0;
 
     void Update()

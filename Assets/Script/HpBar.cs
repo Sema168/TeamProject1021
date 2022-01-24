@@ -6,26 +6,29 @@ using UnityEngine.UI;
 public class HpBar : MonoBehaviour
 {
     [Header("HPのSlider")] public Slider hpSlider;
-    public PlayerController player;
-    public GameOver gameOver;
+    [Header("プレイヤースクリプト")] public PlayerController player;
+    [Header("ゲームオーバースクリプト")] public GameOver gameOver;
 
 
     /// <summary>
     /// 最大HP
     /// </summary>
     private int maxHp = 100;
+
     /// <summary>
     /// 現在のHP
     /// </summary>
     private int currentHp;
+
+    /// <summary>
+    /// ダメージ
+    /// </summary>
     private int damage = 20;
 
 
     void Start()
     {
-        //Sliderを満タンにする。
         hpSlider.value = 1;
-        //現在のHPを最大HPと同じに。
         currentHp = maxHp;
     }
     void Update()
@@ -40,11 +43,8 @@ public class HpBar : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Laser")
         {
-            //現在のHPからダメージを引く
             currentHp = currentHp - damage;
-
-            //最大HPにおける現在のHPをSliderに反映。
-            hpSlider.value = (float)currentHp / (float)maxHp; ;
+            hpSlider.value = (float)currentHp / (float)maxHp;
             player.isDamage = true;
         }
     }

@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     [SerializeField] public static int score;
+    [Header("スコアテキスト")] public Text scoreText;
     private int maxScore = 999999;
-    public Text scoreText;
 
     void Update()
     {
         Text scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
-
 
         if (score == 0)
         {
@@ -30,7 +29,7 @@ public class Score : MonoBehaviour
         {
             scoreText.text = "0" + score;
         }
-        else if (100000 <= score && score < 1000000)
+        else if (100000 <= score && score < maxScore)
         {
             scoreText.text = "" + score;
         }

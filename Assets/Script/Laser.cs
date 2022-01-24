@@ -53,5 +53,9 @@ public class Laser : MonoBehaviour
         {
             onTrigger = true;
         }
+        else if (collision.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class MirrorUI : MonoBehaviour
 {
     [Header("プレイヤースクリプト")] public PlayerController player;
-    public Text mirrorUIText;
-    public Text cvMirrorUIText;
-    public Text ccMirrorUIText;
+    [SerializeField, Header("鏡の所持数テキスト")]
+    private Text mirrorUIText;
+    [SerializeField, Header("凸面鏡の所持数テキスト")]
+    private Text cvMirrorUIText;
+    [SerializeField, Header("凹面鏡の所持数テキスト")]
+    private Text ccMirrorUIText;
 
 
     void Update()

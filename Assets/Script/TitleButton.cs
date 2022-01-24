@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TitleButton : MonoBehaviour
 {
-    public GameObject rankingUI;
+    [SerializeField, Header("ランキング")]
+    private GameObject rankingUI;
 
+    /// <summary>
+    /// スタートボタンを押す
+    /// </summary>
     public void OnClickStartButton()
     {
         SceneManager.LoadScene("GameSceneTsuyuki");
     }
 
+    /// <summary>
+    /// ランキングボタンを押す
+    /// </summary>
     public void OnClickRankingButton()
     {
         rankingUI.SetActive(!rankingUI.activeSelf);
