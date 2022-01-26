@@ -23,7 +23,7 @@ public class HpBar : MonoBehaviour
     /// <summary>
     /// ƒ_ƒ[ƒW
     /// </summary>
-    private int damage = 20;
+    private int damage = 10;
 
 
     void Start()

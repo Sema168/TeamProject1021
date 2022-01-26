@@ -8,6 +8,7 @@ public class EneBar : MonoBehaviour
     [Header("エネルギーのSlider")] public Slider eneSlider;
     [Header("HpBarのスクリプト")] public HpBar hpBar;
     [Header("Barrierのスクリプト")] public Barrier barrier;
+    [Header("Increaceのスクリプト")] public Increace increace;
 
     /// <summary>
     /// 最大エネルギー量
@@ -57,8 +58,11 @@ public class EneBar : MonoBehaviour
                 //エネルギーが消費量分残っているとき
                 if (eneSlider.value >= cost[skillNum ] / maxEne)
                 {
-                    EneSliderControll();
-                    barrier.BarrierSkill();
+                    if (!barrier.barrier.activeSelf)
+                    {
+                        EneSliderControll();
+                        barrier.BarrierSkill();
+                    }
                 }
             }
             else if (skillNum == 2)
@@ -66,7 +70,7 @@ public class EneBar : MonoBehaviour
                 if (eneSlider.value >= cost[skillNum] / maxEne)
                 {
                     EneSliderControll();
-                    Debug.Log("分身発動！");
+                    increace.DecoyInstance();
                 }
             }
             else

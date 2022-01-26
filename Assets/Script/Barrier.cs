@@ -10,6 +10,30 @@ public class Barrier : MonoBehaviour
     /// </summary>
     private float barrierTime = 10.0f;
 
+    private float activeTime = 0.0f;
+    private float blinkTime = 0.0f;
+    private float blinkStartTime = 7.0f;
+    private SpriteRenderer sr = null;
+
+    void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    void Update()
+    {
+        if (barrier.activeSelf)
+        {
+            activeTime += Time.deltaTime;
+            BarrierBlink();
+        }
+        else
+        {
+            activeTime = 0.0f;
+            blinkTime = 0.0f;
+        }
+    }
+
     public void BarrierSkill()
     {
         barrier.SetActive(true);
@@ -21,6 +45,35 @@ public class Barrier : MonoBehaviour
         barrier.SetActive(false);
     }
 
+    void BarrierBlink()
+    {
+        if (activeTime > blinkStartTime)
+        {
+            if (blinkTime > 0.2f)
+            {
+                sr.enabled = true;
+                blinkTime = 0.0f;
+            }
+            else if (blinkTime > 0.1f)
+            {
+                sr.enabled = false;
+            }
+            else
+            {
+                sr.enabled = true;
+            }
+
+            if (activeTime > barrierTime)
+            {
+                sr.enabled = true;
+            }
+            else
+            {
+                blinkTime += Time.deltaTime;
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider .tag == "Laser")
@@ -28,4 +81,5 @@ public class Barrier : MonoBehaviour
             Destroy(collider.gameObject);
         }
     }
+
 }

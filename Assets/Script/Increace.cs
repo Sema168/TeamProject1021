@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Increace : MonoBehaviour
 {
-    public GameObject decoyPrefab;
-    void Start()
+    public GameObject SubPrefab;
+    private float destroyTime = 15.0f;
+    public void DecoyInstance()
     {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-    void DecoyInstace()
-    {
-        GameObject decoy = Instantiate(decoyPrefab);
+        GameObject weapon = transform.Find("SubSpawnArea").gameObject;
+        GameObject decoy = Instantiate(SubPrefab,weapon.transform .position,weapon.transform.rotation);
+        Destroy(decoy.gameObject,destroyTime);
     }
 }

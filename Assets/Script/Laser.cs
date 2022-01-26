@@ -49,11 +49,11 @@ public class Laser : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Laser" || collision.tag == "Lava")
+        if (collision.tag == "Lava")
         {
             onTrigger = true;
         }
-        else if (collision.tag == "Player")
+        else if (collision.tag == "Player" || collision.tag == "syo")
         {
             Destroy(gameObject);
         }

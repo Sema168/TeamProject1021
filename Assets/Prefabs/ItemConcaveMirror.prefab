@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4609395669172047091}
   - component: {fileID: 7756333738171283014}
   - component: {fileID: 2717925491639267746}
+  - component: {fileID: -7786095825906526653}
   m_Layer: 0
   m_Name: ItemConcaveMirror
   m_TagString: ItemConcaveMirror
@@ -99,3 +100,15 @@ CapsuleCollider2D:
   m_Offset: {x: -0.025375858, y: -0.19031674}
   m_Size: {x: 2.2180321, y: 3.9031756}
   m_Direction: 0
+--- !u!114 &-7786095825906526653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8174878728677988490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a4f3ddfc5f7c4488bc2a2aed62ae1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -33,7 +33,7 @@ public class hani : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "syo" || col.gameObject.tag == "Lava")
+        if (col.gameObject.tag == "syo" || col.gameObject.tag == "Lava" || col.gameObject.tag == "Enemy") 
         {
             movePosition = sin();
         }
