@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 63821706}
   - component: {fileID: 63821707}
   - component: {fileID: 63821708}
+  - component: {fileID: 63821709}
   m_Layer: 0
   m_Name: UIScript
   m_TagString: Untagged
@@ -368,6 +369,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 549646195}
+--- !u!114 &63821709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63821702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a4789e41c6b2641a3d4c364dbec11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eneSlider: {fileID: 1467745343}
+  hpBar: {fileID: 1665006761}
+  barrier: {fileID: 360716908}
+  increace: {fileID: 929610751}
 --- !u!1 &70290068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1090,7 @@ Transform:
   m_LocalScale: {x: 6.317744, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1750051849}
-  m_RootOrder: 22
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342195244
 GameObject:
@@ -1529,63 +1546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444338296}
   m_CullTransparentMesh: 1
---- !u!1 &448241996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 448241998}
-  - component: {fileID: 448241997}
-  m_Layer: 0
-  m_Name: HouseMirror
-  m_TagString: Mirror
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &448241997
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448241996}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02611959}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.07710624}
-  m_EdgeRadius: 0
---- !u!4 &448241998
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448241996}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2957282, y: -6.04, z: -2.1363165}
-  m_LocalScale: {x: 1.905805, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1750051849}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &493273103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2144,7 @@ Transform:
   m_LocalScale: {x: 3.6210294, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1750051849}
-  m_RootOrder: 24
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &920576788
 GameObject:
@@ -3255,7 +3215,7 @@ PrefabInstance:
     - target: {fileID: 3863857641818276361, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: eneBar
       value: 
-      objectReference: {fileID: 1467745344}
+      objectReference: {fileID: 63821709}
     - target: {fileID: 3863857641818276361, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: concaveMirror
       value: 
@@ -3279,7 +3239,7 @@ PrefabInstance:
     - target: {fileID: 7079077174104850181, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: eneBar
       value: 
-      objectReference: {fileID: 1467745344}
+      objectReference: {fileID: 63821709}
     - target: {fileID: 7079077174104850181, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: concaveMirror
       value: 
@@ -3287,7 +3247,7 @@ PrefabInstance:
     - target: {fileID: 7289758032513862485, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: eneBar
       value: 
-      objectReference: {fileID: 1467745344}
+      objectReference: {fileID: 63821709}
     - target: {fileID: 7289758032513862485, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: concaveMirror
       value: 
@@ -3558,7 +3518,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1467745342}
   - component: {fileID: 1467745343}
-  - component: {fileID: 1467745344}
   m_Layer: 5
   m_Name: EnergyBar
   m_TagString: Untagged
@@ -3638,22 +3597,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1467745344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467745341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a4789e41c6b2641a3d4c364dbec11b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eneSlider: {fileID: 1467745343}
-  hpBar: {fileID: 1665006761}
-  barrier: {fileID: 360716908}
-  increace: {fileID: 929610751}
 --- !u!1 &1514589317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,10 +3772,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 10, y: 6}
-      - {x: -10, y: 6}
-      - {x: -10, y: -6}
-      - {x: 10, y: -6}
+    - - {x: 10, y: 6.2}
+      - {x: -10, y: 6.2}
+      - {x: -10, y: -6.2}
+      - {x: 10, y: -6.2}
 --- !u!4 &1570296062
 Transform:
   m_ObjectHideFlags: 0
@@ -3852,63 +3795,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5604444899384080281, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
   m_PrefabInstance: {fileID: 1337614679}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1626106940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1626106942}
-  - component: {fileID: 1626106941}
-  m_Layer: 0
-  m_Name: HouseMirror
-  m_TagString: Mirror
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1626106941
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626106940}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02611959}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.07710624}
-  m_EdgeRadius: 0
---- !u!4 &1626106942
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626106940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5386637, y: 6.526, z: -2.1363165}
-  m_LocalScale: {x: 1.905805, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1750051849}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632537324
 GameObject:
   m_ObjectHideFlags: 0
@@ -4235,10 +4121,7 @@ Transform:
   - {fileID: 200935100}
   - {fileID: 2020124238}
   - {fileID: 1632537326}
-  - {fileID: 448241998}
-  - {fileID: 1626106942}
   - {fileID: 325672221}
-  - {fileID: 2058803596}
   - {fileID: 840676053}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -4954,63 +4837,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033921037}
   m_CullTransparentMesh: 1
---- !u!1 &2058803594
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2058803596}
-  - component: {fileID: 2058803595}
-  m_Layer: 0
-  m_Name: HouseMirror
-  m_TagString: Mirror
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &2058803595
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058803594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02611959}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.07710624}
-  m_EdgeRadius: 0
---- !u!4 &2058803596
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058803594}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.82322, y: 6.526, z: -2.1363165}
-  m_LocalScale: {x: 1.905805, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1750051849}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074235739
 GameObject:
   m_ObjectHideFlags: 0

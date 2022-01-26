@@ -9,6 +9,7 @@ public class Barrier : MonoBehaviour
     /// ƒoƒŠƒA‚Ì‘±ŠÔ
     /// </summary>
     private float barrierTime = 10.0f;
+    private bool isBarrierSkill = false;
 
     private float activeTime = 0.0f;
     private float blinkTime = 0.0f;
@@ -22,31 +23,29 @@ public class Barrier : MonoBehaviour
 
     void Update()
     {
-        if (barrier.activeSelf)
+        if (isBarrierSkill)
         {
-            activeTime += Time.deltaTime;
             BarrierBlink();
-        }
-        else
-        {
-            activeTime = 0.0f;
-            blinkTime = 0.0f;
         }
     }
 
     public void BarrierSkill()
     {
+        isBarrierSkill = true;
         barrier.SetActive(true);
         Invoke(nameof(BarrierEnd), barrierTime);
     }
     
     void BarrierEnd()
     {
+        isBarrierSkill = false;
         barrier.SetActive(false);
     }
 
-    void BarrierBlink()
+    public void BarrierBlink()
     {
+        activeTime += Time.deltaTime;
+        Debug.Log(activeTime);
         if (activeTime > blinkStartTime)
         {
             if (blinkTime > 0.2f)
@@ -66,6 +65,8 @@ public class Barrier : MonoBehaviour
             if (activeTime > barrierTime)
             {
                 sr.enabled = true;
+                activeTime = 0.0f;
+                blinkTime = 0.0f;
             }
             else
             {
