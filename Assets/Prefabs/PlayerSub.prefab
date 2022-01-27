@@ -21,54 +21,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5972534433144313117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427462783268783907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8360698757407064511}
-  mirror: {fileID: 7324273577775005916}
-  convexMirror: {fileID: 5228477880860463663}
-  concaveMirror: {fileID: 3427462783268783907}
---- !u!114 &5754735138015221626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228477880860463663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8360698757407064511}
-  mirror: {fileID: 7324273577775005916}
-  convexMirror: {fileID: 5228477880860463663}
-  concaveMirror: {fileID: 3427462783268783907}
---- !u!114 &1956738561300799838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7324273577775005916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf978de127e37145b993621fa27ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8360698757407064511}
-  mirror: {fileID: 7324273577775005916}
-  convexMirror: {fileID: 5228477880860463663}
-  concaveMirror: {fileID: 3427462783268783907}
 --- !u!1 &7348431449649013646
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,8 +32,8 @@ GameObject:
   - component: {fileID: 7348431449649013642}
   - component: {fileID: 7348431449649013645}
   - component: {fileID: 1092304417235617383}
-  - component: {fileID: 8360698757407064511}
   - component: {fileID: 2848154748063089736}
+  - component: {fileID: 854719056807355938}
   m_Layer: 0
   m_Name: PlayerSub
   m_TagString: Untagged
@@ -172,23 +124,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8360698757407064511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7348431449649013646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc973de57e65aa4ca1e3c1db44bede0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mirror: {fileID: 7324273577775005916}
-  convexMirror: {fileID: 5228477880860463663}
-  concaveMirror: {fileID: 3427462783268783907}
-  speed: 3
-  barrier: {fileID: 693731868397638063}
 --- !u!50 &2848154748063089736
 Rigidbody2D:
   serializedVersion: 4
@@ -210,6 +145,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &854719056807355938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348431449649013646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7765772e2a8bfc448b2bec56c3da3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mirror: {fileID: 7324273577775005916}
+  convexMirror: {fileID: 5228477880860463663}
+  concaveMirror: {fileID: 3427462783268783907}
+  speed: 3
 --- !u!1 &7371758008424416902
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4968271980703068960, guid: 57ad6a6dba9682f43a3140712ab685c1, type: 3}
       propertyPath: m_Name
-      value: ConvexMirror
+      value: ConvexMirrorSub
       objectReference: {fileID: 0}
     - target: {fileID: 4968271980703068960, guid: 57ad6a6dba9682f43a3140712ab685c1, type: 3}
       propertyPath: m_IsActive
@@ -323,7 +274,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8379305213832653332, guid: 1e11d98e0b23b0c4898df1d1db09bdf8, type: 3}
       propertyPath: m_Name
-      value: Mirror
+      value: MirrorSub
       objectReference: {fileID: 0}
     - target: {fileID: 8379305213832653332, guid: 1e11d98e0b23b0c4898df1d1db09bdf8, type: 3}
       propertyPath: m_IsActive
@@ -394,7 +345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 667028362164987892, guid: 96dc4b8e6fd9f0d48a68b92081105577, type: 3}
       propertyPath: m_Name
-      value: ConcaveMirror
+      value: ConcaveMirrorSub
       objectReference: {fileID: 0}
     - target: {fileID: 667028362164987892, guid: 96dc4b8e6fd9f0d48a68b92081105577, type: 3}
       propertyPath: m_IsActive

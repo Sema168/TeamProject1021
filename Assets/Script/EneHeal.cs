@@ -15,6 +15,9 @@ public class EneHeal : MonoBehaviour
             if (concaveMirror.activeSelf)
             {
                 eneBar.EneHeal();
+                eneBar.EneHeal();
+                eneBar.EneHeal();
+                eneBar.EneHeal();
             }
         }
     }

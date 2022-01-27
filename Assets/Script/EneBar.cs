@@ -21,11 +21,11 @@ public class EneBar : MonoBehaviour
     /// <summary>
     /// エネルギーの消費量
     /// </summary>
-    private float[] cost= { 50, 30, 40 };//{回復,バリア,分身}
+    private float[] cost= { 50, 50, 30 };//{回復,バリア,分身}
     /// <summary>
     /// エネルギーの回復量
     /// </summary>
-    private float eneHeal= 5.0f;
+    private float eneHeal= 3.0f;
 
 
     private int count = 0;

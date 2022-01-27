@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr = null;
 
     //‹¾‚ÌŠ”
-    private int currentStock;
     private int maxStock = 3;
+    [System.NonSerialized] public int currentStock;
     [System.NonSerialized] public int mirrorStock = 1;
     [System.NonSerialized] public int convexMirrorStock = 1;
     [System.NonSerialized] public int concaveMirrorStock = 1;

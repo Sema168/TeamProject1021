@@ -12,6 +12,8 @@ public class MirrorUI : MonoBehaviour
     private Text cvMirrorUIText;
     [SerializeField, Header("凹面鏡の所持数テキスト")]
     private Text ccMirrorUIText;
+    [SerializeField, Header("凹面鏡の所持数テキスト")]
+    private Text mirrorStockUIText;
 
 
     void Update()
@@ -19,9 +21,11 @@ public class MirrorUI : MonoBehaviour
         Text mirrorText = mirrorUIText.GetComponent<Text>();
         Text cvMirrorText = cvMirrorUIText.GetComponent<Text>();
         Text ccMirrorText = ccMirrorUIText.GetComponent<Text>();
+        Text mirrorStockText = mirrorStockUIText.GetComponent<Text>();
 
         mirrorText.text = "×" + player.mirrorStock;
         cvMirrorText.text = "×" + player.convexMirrorStock;
         ccMirrorText.text = "×" + player.concaveMirrorStock;
+        mirrorStockText.text = player.currentStock + " / 3";
     }
 }

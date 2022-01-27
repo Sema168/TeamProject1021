@@ -73,5 +73,4 @@ public class Barrier : MonoBehaviour
             Destroy(collider.gameObject);
         }
     }
-
 }
