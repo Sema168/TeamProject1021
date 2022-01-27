@@ -6,7 +6,7 @@ public class ItemMirror : MonoBehaviour
 {
     private float dropTime = 0.0f;
     private float blinkTime = 0.0f;
-    private float blinkStartTime = 17.0f;
+    private float blinkStartTime = 18.0f;
     private float destroyTime = 20.0f;
     private SpriteRenderer sr = null;
 

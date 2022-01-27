@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("凹面鏡")] public GameObject concaveMirror;
     [Header("移動速度")] public float speed;
     [Header("バリア")] public GameObject barrier;
+    [Header("バリアスクリプト")] public Barrier barrierScript;
 
     private Rigidbody2D rb;
     private int count = 0;
@@ -145,7 +146,10 @@ public class PlayerController : MonoBehaviour
             blinkTime = 0f;
             damageTime = 0f;
             sr.enabled = true;
-            barrier.SetActive(false);
+            if (!barrierScript.isBarrierSkill)
+            {
+                barrier.SetActive(false);
+            }
         }
         else
         {

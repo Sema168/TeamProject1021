@@ -307,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63821705
 MonoBehaviour:
@@ -1688,7 +1688,7 @@ RectTransform:
   - {fileID: 351155810}
   - {fileID: 255843390}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3154,7 +3154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2421954718640063932, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2421954718640063932, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3212,6 +3212,10 @@ PrefabInstance:
       propertyPath: barrier
       value: 
       objectReference: {fileID: 1618586619}
+    - target: {fileID: 3486198142216464265, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
+      propertyPath: barrierScript
+      value: 
+      objectReference: {fileID: 360716908}
     - target: {fileID: 3863857641818276361, guid: 7af996084a26b4e4eaecc7a91fdc398e, type: 3}
       propertyPath: eneBar
       value: 
@@ -3506,7 +3510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467745341
 GameObject:
@@ -4124,7 +4128,7 @@ Transform:
   - {fileID: 325672221}
   - {fileID: 840676053}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752752876
 GameObject:

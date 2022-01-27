@@ -5,16 +5,13 @@ using UnityEngine;
 public class Barrier : MonoBehaviour
 {
     [Header("バリア")] public GameObject barrier;
-    /// <summary>
-    /// バリアの持続時間
-    /// </summary>
     private float barrierTime = 10.0f;
-    private bool isBarrierSkill = false;
 
     private float activeTime = 0.0f;
     private float blinkTime = 0.0f;
-    private float blinkStartTime = 7.0f;
+    private float blinkStartTime = 8.0f;
     private SpriteRenderer sr = null;
+    [System.NonSerialized] public bool isBarrierSkill = false;
 
     void Start()
     {
@@ -39,15 +36,20 @@ public class Barrier : MonoBehaviour
     void BarrierEnd()
     {
         isBarrierSkill = false;
+        sr.enabled = true;
+        activeTime = 0.0f;
+        blinkTime = 0.0f;
         barrier.SetActive(false);
     }
 
-    public void BarrierBlink()
+    void BarrierBlink()
     {
         activeTime += Time.deltaTime;
-        Debug.Log(activeTime);
+
         if (activeTime > blinkStartTime)
         {
+            blinkTime += Time.deltaTime;
+
             if (blinkTime > 0.2f)
             {
                 sr.enabled = true;
@@ -60,17 +62,6 @@ public class Barrier : MonoBehaviour
             else
             {
                 sr.enabled = true;
-            }
-
-            if (activeTime > barrierTime)
-            {
-                sr.enabled = true;
-                activeTime = 0.0f;
-                blinkTime = 0.0f;
-            }
-            else
-            {
-                blinkTime += Time.deltaTime;
             }
         }
     }
