@@ -23,4 +23,14 @@ public class TitleButton : MonoBehaviour
     {
         rankingUI.SetActive(!rankingUI.activeSelf);
     }
+
+    public void OnClickStartButton2()
+    {
+        SceneManager.LoadScene("TitleScene3");
+    }
+    public void OnClickStartButton3()
+    {
+        SceneManager.LoadScene("TitleScene2");
+    }
+
 }
